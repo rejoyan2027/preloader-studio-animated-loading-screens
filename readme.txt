@@ -12,43 +12,54 @@ Create animated preloaders, responsive bottom menus, WooCommerce product layouts
 
 == Description ==
 
-Preloader Studio offers independent design tools for loading screens, mobile navigation, WooCommerce product layouts, and customer account experiences. The plugin can be used without WooCommerce; shopping and account-specific features require WooCommerce to be active.
+**Preloader Studio** offers loading animations, mobile navigation, WooCommerce product layouts and optional account designs in one WordPress plugin. Each integration can be enabled separately.
 
-**Core loading experience**
+**✨ Features at a Glance**
 
-* Choose from 36 local CSS preloader animations with live previews.
-* Use the site's logo, an uploaded image or animated GIF, and custom text.
-* Customize animations, duration, background, exit effects, branding and responsive behavior.
-* Configure page/device rules, safety timeout and theme-loader compatibility options.
-* Save reusable preloader design presets and export/import settings.
+* 🔄 **36 animated preloaders** with live preview and appearance settings.
+* 📱 **24 responsive bottom-menu styles** for mobile and tablet visitors.
+* 🛍️ **32 WooCommerce product-card styles** with optional layout integration.
+* 🔐 **6 account design templates** for login, registration and recovery.
+* 🎨 **Flexible customization** for logos, images, colors and display rules.
 
-**Mobile and tablet navigation**
+**🔄 Loading Animations**
 
-* 24 navigation styles with local icons and per-device sizing options.
-* Configure up to six menu destinations: Home, Search, published pages or custom links.
-* Active-item styling, optional scroll-to-hide behavior, and mobile/tablet previews.
-* Opt-in compatibility modes for known theme mobile toolbars. Theme settings are not overwritten.
+* Preview bundled CSS loaders; choose a logo, GIF or loading text.
+* Set duration, background, exit effects, page/device rules and safety timeout.
+* Save presets and import or export settings.
 
-**WooCommerce product design tools**
+**📱 Mobile Bottom Menu**
 
-* 32 product card styles with real product images and responsive preview.
-* Configure grid columns, display elements, image ratios and category rules.
-* Optional replacement of supported classic WooCommerce product-loop templates.
-* Optional matching single-product layout, with WooCommerce product hooks retained.
-* Product builders using independent markup may require the plugin shortcode or additional integration; this is not a universal override for every page builder.
+* Configure up to six links for Home, Search, pages and custom destinations.
+* Adjust local icons, active styles, sizes and optional scroll-to-hide behavior.
+* Preview different devices and enable optional theme-toolbar compatibility.
 
-**Login, registration and account designs**
+**🛍️ WooCommerce Product Design**
 
-* Six independent Login/Register/Password Recovery design templates.
-* Optional takeover of the WooCommerce guest My Account screen.
-* Optional premium logged-in account dashboard; WooCommerce account endpoints remain available.
-* Add up to 12 extra registration fields of supported types, stored in user metadata.
-* Login and registration use WordPress/WooCommerce authentication and registration processing.
-* Manual Default Restore switches designs off without deleting your saved appearance choices.
+* Select product card styles, columns, image ratios and displayed elements.
+* Optionally integrate with supported classic product loops and single-product pages.
+* Custom page builders may require a shortcode or separate integration.
 
-All overrides are separately configurable. Some third-party themes and page builders replace WooCommerce markup outside the standard PHP template hooks. Test each enabled integration on a staging site before publishing it.
+**🔐 Login, Registration & Account**
 
-No account, authentication data, site content or usage analytics are sent to a Preloader Studio server. All icons and default product demo pictures used in the plugin are bundled locally.
+* Style login, registration and password recovery with six design templates.
+* Optionally redesign WooCommerce My Account and the signed-in dashboard.
+* Add up to 12 extra registration fields, keeping WordPress authentication intact.
+* Disable an override to restore normal page rendering.
+
+**⚙️ Compatibility & Privacy**
+
+Loading screens and mobile navigation work without WooCommerce. Product and account integrations require WooCommerce. Optional integrations should be tested with your theme, CAPTCHA and other security plugins before live use. No customer authentication data, site content or analytics are sent to a Preloader Studio server; local assets are bundled with the plugin.
+
+**📸 Interface Preview**
+
+The three screenshots below are *illustrative design previews* of the loading, product and navigation studios. The installed interface may differ from these mockups.
+
+
+== Screenshots ==
+1. 🔄 Loading Animations - Illustrative overview of loading styles, appearance controls and live preview.
+2. 🛍️ Product Design - Illustrative preview of a WooCommerce product layout and styling controls.
+3. 📱 Mobile Bottom Menu - Illustrative preview of navigation layouts and mobile menu styling.
 
 == Installation ==
 

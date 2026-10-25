@@ -1,5 +1,24 @@
 # Preloader Studio – Animated Loading Screens
 
+
+## 📸 Plugin interface gallery
+
+| 🔄 Loading Animations | 🛍️ Product Design | 📱 Mobile Bottom Menu |
+|:---:|:---:|:---:|
+| ![Loading animation studio](.wordpress-org/screenshot-1.png) | ![WooCommerce product design](.wordpress-org/screenshot-2.png) | ![Responsive mobile navigation](.wordpress-org/screenshot-3.png) |
+
+*These are illustrative UI previews. Actual plugin screens and capabilities may differ; refer to the WordPress.org `readme.txt` and the installed plugin for supported features.*
+
+### ✨ Included design tools
+
+- **🔄 Loading Studio:** 36 CSS animations, live previews, page and device rules.
+- **📱 Mobile Navigation:** 24 bundled navigation styles and flexible links.
+- **🛍️ WooCommerce Product Layouts:** 32 styles for product cards and optional single-product presentation.
+- **🔐 Account Interfaces:** six login, registration and recovery design templates.
+- **⚙️ Flexible Settings:** independently controlled overrides and theme compatibility options.
+
+---
+
 **WordPress.org slug:** `preloader-studio-animated-loading-screens`  
 **Current version:** `2.6.5`  
 **Maintainer / WordPress.org account:** `codelith`  
@@ -28,7 +47,7 @@ GitHub is the **development source**. WordPress.org's SVN is the **public releas
 - Everything needed to install the plugin is at the GitHub repository root.
 - `.distignore` prevents GitHub-only files (`README.md`, `.github/`, etc.) from being sent to WordPress.org.
 - Runtime JS and its matching human-readable source are under `assets/js/` and `assets/js/src/`; rebuilding instructions are in `SOURCE-README.txt`.
-- Optional WordPress.org listing images can be placed in `.wordpress-org/` with names such as `icon-256x256.png`, `banner-772x250.png`, and `banner-1544x500.png`; the deploy action places them in SVN `/assets/`. No listing images are included in this package.
+- WordPress.org directory listing images are included in `.wordpress-org/`: `icon-128x128.png`, `icon-256x256.png`, `banner-772x250.png`, and `banner-1544x500.png`. The deploy action automatically transfers them to the SVN top-level `/assets/` directory. They are NOT runtime plugin assets.
 - Do not commit passwords, tokens, or personal information to this public repository. Use GitHub Actions Secrets.
 
 ## Quality checks

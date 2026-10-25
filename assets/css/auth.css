@@ -1,0 +1,103 @@
+/* Preloader Studio authentication UI: 24 CSS-only looks; never modifies form processing. */
+.psa-canvas,body.psa-active,body.psa-wc-active,.psa-auth-shortcode{
+  --psa-accent:#7865f6;--psa-background:#f1efff;--psa-panel:#fff;--psa-ink:#262141;
+  --psa-radius:24px;--psa-btn-radius:14px;--psa-card-shadow:0 24px 68px rgba(24,24,54,.13);
+  --psa-art:linear-gradient(140deg,var(--psa-accent),#8b70c1);--psa-outline:transparent;
+  color:var(--psa-ink);font-family:inherit;
+}
+.psa-canvas{width:100%;min-height:100%;box-sizing:border-box;background:var(--psa-background);color:var(--psa-ink);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;overflow:hidden;position:relative;}
+.psa-canvas *{box-sizing:border-box}
+.psa-canvas-art{padding:clamp(22px,5%,55px);min-height:320px;position:relative;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;gap:12px;background:var(--psa-art);overflow:hidden}
+.psa-canvas-art:before{content:'';position:absolute;width:270px;height:270px;border:1px solid rgba(255,255,255,.24);border-radius:50%;top:-93px;right:-80px;box-shadow:0 0 0 50px rgba(255,255,255,.04),0 0 0 105px rgba(255,255,255,.035)}
+.psa-canvas-art>*{position:relative;z-index:1}
+.psa-canvas-art .psa-deco-mark{font-size:42px;line-height:1}
+.psa-canvas-art>span:not(.psa-deco-mark){font-size:10px;font-weight:700;letter-spacing:2.4px;opacity:.8}
+.psa-canvas-art strong{font-size:clamp(26px,3vw,46px);line-height:1.07;max-width:430px;letter-spacing:-1px}
+.psa-canvas-art em{font-style:normal;font-size:13px;opacity:.82}
+.psa-canvas-form{width:min(100%,480px);margin:auto;padding:clamp(24px,6%,58px);background:var(--psa-panel);border-radius:var(--psa-radius);box-shadow:var(--psa-card-shadow);position:relative;z-index:1;border:1px solid var(--psa-outline)}
+.psa-canvas-brand{min-height:34px;display:flex;align-items:center;margin-bottom:13px}.psa-canvas-brand img{max-width:140px;max-height:45px;object-fit:contain}
+.psa-brand-symbol{font-size:32px;color:var(--psa-accent)}
+.psa-canvas-kicker{font-size:10px;color:var(--psa-accent);font-weight:800;letter-spacing:2px}
+.psa-canvas-form h3{font-size:30px;letter-spacing:-.9px;line-height:1.12;margin:10px 0;color:var(--psa-ink)}
+.psa-canvas-form p{font-size:13px;line-height:1.6;color:var(--psa-ink);opacity:.68;margin:0 0 23px}
+.psa-form-visual{display:grid;gap:14px}
+.psa-form-visual label{font-weight:650;font-size:12px;color:var(--psa-ink)}
+.psa-input-fake{display:flex;align-items:center;margin-top:8px;min-height:42px;padding:0 13px;background:rgba(120,120,120,.06);border:1px solid rgba(120,120,120,.2);border-radius:10px;color:var(--psa-ink);opacity:.8;font-weight:500}
+.psa-form-row{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:10px;opacity:.75}
+.psa-preview-button{background:var(--psa-accent);color:white;padding:15px 12px;border-radius:var(--psa-btn-radius);font-size:13px;font-weight:700;text-align:center;box-shadow:0 8px 18px color-mix(in srgb,var(--psa-accent),transparent 76%)}
+.psa-preview-footer{text-align:center;font-size:11px;color:var(--psa-ink);opacity:.8}
+/* The native WordPress login form is untouched, including lost/reset password and login security extensions. */
+body.login.psa-active{background:var(--psa-background);color:var(--psa-ink);min-height:100vh}
+body.login.psa-active #login{width:min(440px,calc(100vw - 30px));padding:clamp(24px,7vh,65px) 0 26px}
+body.login.psa-active #login h1 a{background-size:contain}
+body.login.psa-active #loginform,body.login.psa-active #registerform,body.login.psa-active #lostpasswordform,body.login.psa-active #resetpassform,body.login.psa-active #rpform{background:var(--psa-panel);border:1px solid var(--psa-outline);border-radius:var(--psa-radius);padding:36px;box-shadow:var(--psa-card-shadow);color:var(--psa-ink)}
+body.login.psa-active .input,body.login.psa-active input[type=text],body.login.psa-active input[type=password],body.login.psa-active input[type=email]{font-size:16px;border:1px solid #cbd0d8;border-radius:10px;min-height:45px;background:rgba(255,255,255,.9);color:#222;box-shadow:none;}
+body.login.psa-active label{color:var(--psa-ink)}
+body.login.psa-active .button-primary{min-height:43px;padding:5px 20px;background:var(--psa-accent);border-color:var(--psa-accent);border-radius:var(--psa-btn-radius);font-weight:700;box-shadow:none}
+body.login.psa-active #nav a,body.login.psa-active #backtoblog a{color:var(--psa-ink)}
+body.login.psa-active .message,body.login.psa-active #login_error{border-radius:10px}
+body.login.psa-active .privacy-policy-page-link a{color:var(--psa-ink)}
+/* WooCommerce native guest forms, including core nonces/handlers, keep their original markup. */
+body.psa-wc-active.woocommerce-account .woocommerce:has(#customer_login){max-width:1140px;margin:24px auto;padding:0 16px}
+body.psa-wc-active.woocommerce-account .psa-woo-hero{background:var(--psa-art);border-radius:var(--psa-radius);padding:28px 32px;margin-bottom:22px;color:#fff;position:relative;overflow:hidden}
+.psa-woo-hero .psa-hero-kicker{font-size:11px;font-weight:700;letter-spacing:2px;opacity:.85}
+.psa-woo-hero h2{color:inherit!important;font-size:clamp(25px,4vw,40px);line-height:1.15;margin:10px 0!important}
+.psa-woo-hero p{color:inherit!important;font-size:14px;opacity:.85;margin:0!important}.psa-woo-logo{max-width:140px;max-height:50px;object-fit:contain;display:block;margin-bottom:12px}
+body.psa-wc-active.woocommerce-account #customer_login{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:24px;align-items:start}
+body.psa-wc-active.woocommerce-account #customer_login:before,body.psa-wc-active.woocommerce-account #customer_login:after{display:none}
+body.psa-wc-active.woocommerce-account #customer_login>.u-column1,body.psa-wc-active.woocommerce-account #customer_login>.u-column2{width:auto!important;float:none!important;max-width:100%!important;min-width:0;padding:26px!important;border:1px solid var(--psa-outline)!important;background:var(--psa-panel)!important;border-radius:var(--psa-radius)!important;box-shadow:var(--psa-card-shadow)!important;flex:none}
+body.psa-wc-active.woocommerce-account #customer_login h2{color:var(--psa-ink)!important;font-size:27px!important;letter-spacing:-.5px;margin:0 0 16px!important}
+body.psa-wc-active.woocommerce-account #customer_login form{background:none!important;border:0!important;box-shadow:none!important;margin:0!important;padding:0!important;max-width:none!important;}
+body.psa-wc-active.woocommerce-account #customer_login label{color:var(--psa-ink)!important;display:block!important;margin-bottom:6px;font-weight:600}
+body.psa-wc-active.woocommerce-account #customer_login input.input-text{width:100%!important;max-width:100%!important;min-height:45px!important;border-radius:10px!important;background:rgba(120,120,120,.035)!important;border:1px solid #c5c5d0!important;padding:10px 12px!important;box-sizing:border-box;}
+body.psa-wc-active.woocommerce-account #customer_login button[type=submit]{background:var(--psa-accent)!important;color:#fff!important;border:0!important;border-radius:var(--psa-btn-radius)!important;min-height:45px!important;padding:9px 25px!important;box-shadow:none!important}
+body.psa-wc-active.woocommerce-account #customer_login .lost_password a{color:var(--psa-accent)}
+.psa-auth-shortcode{background:var(--psa-background);padding:22px;border-radius:var(--psa-radius);}
+.psa-auth-shortcode #loginform{max-width:450px;background:var(--psa-panel);padding:25px;border-radius:var(--psa-radius);box-shadow:var(--psa-card-shadow);margin:auto}
+.psa-auth-shortcode #loginform label{display:block;margin:10px 0}
+.psa-auth-shortcode #loginform input.input{width:100%;max-width:100%;box-sizing:border-box;padding:9px;border:1px solid #ddd;border-radius:10px}
+.psa-auth-shortcode #wp-submit{background:var(--psa-accent);color:white;border:0;border-radius:var(--psa-btn-radius);padding:11px 20px}
+.psa-shortcode-links{text-align:center;margin:15px}
+/* Distinct shape and spatial systems; shared semantics across preview and real auth form. */
+:is(.psa-design--aurora-glass,.psa-style-aurora-glass){--psa-radius:25px;--psa-art:linear-gradient(125deg,#5645bb,#a88cfa 55%,#e2a1dc);--psa-card-shadow:0 30px 80px #6355c433}
+:is(.psa-design--editorial-split,.psa-style-editorial-split){--psa-radius:2px;--psa-btn-radius:1px;--psa-art:linear-gradient(140deg,#a86642,#e4aa75);--psa-card-shadow:12px 12px 0 #cda98955}
+:is(.psa-design--midnight-neon,.psa-style-midnight-neon){--psa-radius:16px;--psa-btn-radius:6px;--psa-art:radial-gradient(circle at 25% 28%,#704fd2,#17182b 70%);--psa-outline:#ad8aff70;--psa-card-shadow:0 0 35px #9e7aff35}
+:is(.psa-design--cloud-card,.psa-style-cloud-card){--psa-radius:38px;--psa-btn-radius:27px;--psa-art:linear-gradient(135deg,#8cc8ff,#467bd6);--psa-card-shadow:0 30px 60px #5084c827}
+:is(.psa-design--terracotta,.psa-style-terracotta){--psa-radius:4px 42px 4px 42px;--psa-btn-radius:0 18px 0 18px;--psa-art:linear-gradient(120deg,#8c4a39,#d88963);--psa-card-shadow:9px 9px 0 #a75b343d}
+:is(.psa-design--emerald-vault,.psa-style-emerald-vault){--psa-radius:12px;--psa-btn-radius:3px;--psa-art:linear-gradient(140deg,#064f3b,#0b232a);--psa-outline:#80d1ad55;--psa-card-shadow:0 25px 66px #02180f99}
+:is(.psa-design--monochrome,.psa-style-monochrome){--psa-radius:0;--psa-btn-radius:0;--psa-art:linear-gradient(130deg,#272727,#878787);--psa-outline:#222;--psa-card-shadow:5px 5px 0 #222}
+:is(.psa-design--sunset-wave,.psa-style-sunset-wave){--psa-radius:40px 7px 40px 7px;--psa-btn-radius:25px;--psa-art:linear-gradient(145deg,#ffad77,#f16c94,#ad66f1);--psa-card-shadow:0 27px 65px #f16c9445}
+:is(.psa-design--neon-circuit,.psa-style-neon-circuit){--psa-radius:3px;--psa-btn-radius:3px;--psa-art:repeating-linear-gradient(125deg,#15242f 0 24px,#1d3741 25px 27px);--psa-outline:#4ef6e18a;--psa-card-shadow:0 0 0 4px #4ef6e10d,0 18px 56px #05171b}
+:is(.psa-design--velvet-royal,.psa-style-velvet-royal){--psa-radius:25px 25px 4px 4px;--psa-btn-radius:50px;--psa-art:linear-gradient(155deg,#3d234e,#815d80);--psa-outline:#dfc28b70;--psa-card-shadow:0 22px 50px #160a244f}
+:is(.psa-design--paper-fold,.psa-style-paper-fold){--psa-radius:3px 45px 3px 3px;--psa-btn-radius:1px;--psa-art:linear-gradient(145deg,#bc9770 0 50%,#e7c5a1 50%);--psa-card-shadow:14px 14px 0 #a18a6929}
+:is(.psa-design--cosmic-orbit,.psa-style-cosmic-orbit){--psa-radius:42px;--psa-btn-radius:50px;--psa-art:radial-gradient(circle at 50% 50%,#8b65d4,#24275c 67%);--psa-outline:#bfc4ff4f;--psa-card-shadow:0 35px 70px #11184b}
+:is(.psa-design--rose-atelier,.psa-style-rose-atelier){--psa-radius:55px 55px 12px 12px;--psa-btn-radius:50px;--psa-art:linear-gradient(120deg,#c45682,#e6a9bd);--psa-card-shadow:0 25px 60px #e7a8bd48}
+:is(.psa-design--bento-tiles,.psa-style-bento-tiles){--psa-radius:22px;--psa-btn-radius:13px;--psa-art:linear-gradient(135deg,#4840a5 0 49%,#8475dc 50%);--psa-card-shadow:9px 9px 0 #aaa2e04d}
+:is(.psa-design--brutalist-ink,.psa-style-brutalist-ink){--psa-radius:0;--psa-btn-radius:0;--psa-art:linear-gradient(90deg,#222 0 30%,#fc8943 30% 100%);--psa-outline:#242424;--psa-card-shadow:9px 9px 0 #141414}
+:is(.psa-design--ocean-tide,.psa-style-ocean-tide){--psa-radius:10px 55px 10px 55px;--psa-btn-radius:10px 28px;--psa-art:linear-gradient(120deg,#176f9a,#24c2c2);--psa-card-shadow:0 20px 65px #188ab344}
+:is(.psa-design--forest-calm,.psa-style-forest-calm){--psa-radius:45px 10px 45px 10px;--psa-btn-radius:30px;--psa-art:linear-gradient(145deg,#3e6952,#9dc09b);--psa-card-shadow:0 18px 60px #426c5540}
+:is(.psa-design--prism-depth,.psa-style-prism-depth){--psa-radius:10px;--psa-btn-radius:10px;--psa-art:conic-gradient(from 40deg,#6362ee,#d2a2ed,#8bd4ea,#6362ee);--psa-outline:#cfc2ff;--psa-card-shadow:0 0 0 8px #9b88ff24,0 30px 50px #5c50ba30}
+:is(.psa-design--sakura-blossom,.psa-style-sakura-blossom){--psa-radius:60px 15px 15px 60px;--psa-btn-radius:35px;--psa-art:linear-gradient(135deg,#e3a2bd,#bd719d);--psa-card-shadow:0 20px 60px #c7709a35}
+:is(.psa-design--retro-terminal,.psa-style-retro-terminal){--psa-radius:0;--psa-btn-radius:0;--psa-art:repeating-linear-gradient(0deg,#182719 0 6px,#203826 7px 8px);--psa-outline:#9dea69;--psa-card-shadow:6px 6px 0 #9dea69}
+:is(.psa-design--golden-gallery,.psa-style-golden-gallery){--psa-radius:2px;--psa-btn-radius:2px;--psa-art:linear-gradient(125deg,#605128,#c6a363);--psa-outline:#b78b37;--psa-card-shadow:0 0 0 9px #b78b3722,0 24px 48px #523c1033}
+:is(.psa-design--arctic-frost,.psa-style-arctic-frost){--psa-radius:35px;--psa-btn-radius:35px;--psa-art:linear-gradient(135deg,#3eacc5,#a1d5e4);--psa-card-shadow:0 20px 70px #2b7c9b37}
+:is(.psa-design--lilac-ribbon,.psa-style-lilac-ribbon){--psa-radius:12px 40px;--psa-btn-radius:0 30px 0 30px;--psa-art:linear-gradient(150deg,#926add 0 40%,#cda7ed 40% 60%,#926add 60%);--psa-card-shadow:10px 10px 0 #a67ce632}
+:is(.psa-design--citrus-energy,.psa-style-citrus-energy){--psa-radius:50px 10px;--psa-btn-radius:40px;--psa-art:linear-gradient(130deg,#ffb428,#eb7642);--psa-card-shadow:0 27px 52px #dfb5463c}
+/* Structural differences beyond palette. */
+.psa-design--editorial-split{grid-template-columns:1.15fr 1fr}.psa-design--editorial-split .psa-canvas-form,.psa-design--monochrome .psa-canvas-form{box-shadow:var(--psa-card-shadow)}
+.psa-design--cloud-card .psa-canvas-form,.psa-design--arctic-frost .psa-canvas-form{border-radius:42px}
+.psa-design--sunset-wave .psa-canvas-art,.psa-design--ocean-tide .psa-canvas-art{clip-path:ellipse(115% 100% at 0 50%)}
+.psa-design--bento-tiles .psa-canvas-art{margin:16px;border-radius:24px}
+.psa-design--brutalist-ink .psa-canvas-form,.psa-design--retro-terminal .psa-canvas-form{border-width:2px}
+.psa-design--velvet-royal .psa-canvas-art,.psa-design--golden-gallery .psa-canvas-art{box-shadow:inset 0 0 0 8px #ffffff14}
+.psa-design--sakura-blossom .psa-canvas-art:before,.psa-design--forest-calm .psa-canvas-art:before{border-radius:35% 65% 60% 40%;transform:rotate(-25deg)}
+.psa-design--cosmic-orbit .psa-canvas-art:before{width:380px;height:380px;border:3px dotted #fff7;top:-125px}
+@media(max-width:700px){.psa-canvas{grid-template-columns:1fr}.psa-canvas-art{min-height:125px;padding:20px;gap:6px}.psa-canvas-art strong{font-size:24px}.psa-canvas-art .psa-deco-mark,.psa-canvas-art em{display:none}.psa-canvas-form{width:calc(100% - 28px);margin:-15px auto 17px;padding:24px}.psa-canvas-form h3{font-size:24px}.psa-canvas-form p{margin-bottom:14px}body.psa-wc-active.woocommerce-account #customer_login{grid-template-columns:1fr;gap:16px}body.psa-wc-active.woocommerce-account #customer_login>.u-column1,body.psa-wc-active.woocommerce-account #customer_login>.u-column2{padding:18px!important}}
+@media(prefers-reduced-motion:reduce){.psa-canvas *,body.psa-active *,body.psa-wc-active *{animation:none!important;transition:none!important}}
+
+/* Optional account shortcode on any WordPress page; WooCommerce still owns submission processing. */
+.psa-auth-shortcode #customer_login{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:18px}
+.psa-auth-shortcode #customer_login>.u-column1,.psa-auth-shortcode #customer_login>.u-column2{float:none!important;width:auto!important;max-width:100%;padding:20px;background:var(--psa-panel);border-radius:var(--psa-radius);box-shadow:var(--psa-card-shadow)}
+.psa-auth-shortcode #customer_login form{background:transparent;border:0;box-shadow:none;padding:0;margin:0}
+.psa-auth-shortcode #customer_login input.input-text{width:100%;min-height:42px;box-sizing:border-box;border:1px solid #ddd;border-radius:10px}
+.psa-auth-shortcode #customer_login button[type=submit]{background:var(--psa-accent);color:#fff;border:0;padding:11px 20px;border-radius:var(--psa-btn-radius)}

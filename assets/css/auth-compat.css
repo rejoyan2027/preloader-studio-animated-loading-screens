@@ -1,0 +1,228 @@
+/** Premium My Account integration. Only guest authentication screens; no checkout/account dashboard changes. */
+body.psa-wc-active.woocommerce-account {
+  --psa-field:color-mix(in srgb,var(--psa-panel) 93%,var(--psa-ink) 7%);
+  --psa-field-line:color-mix(in srgb,var(--psa-ink) 19%,transparent);
+  --psa-soft-text:color-mix(in srgb,var(--psa-ink) 73%,transparent);
+  --psa-contrast-link:var(--psa-accent);
+}
+/* The content area (and all nested login layouts) gets an explicit text palette.
+   WoodMart color-scheme-light + .wd-* headings can otherwise render white on white. */
+body.psa-wc-active.woocommerce-account :is(.woocommerce,.woocommerce-account-wrapper,.wd-registration-page,.wd-login-register,.wd-login-tabs,#customer_login,.psa-auth-shortcode) {
+  --wd-text-color:var(--psa-ink);
+  --wd-title-color:var(--psa-ink);
+  --wd-primary-color:var(--psa-accent);
+  color:var(--psa-ink)!important;
+}
+body.psa-wc-active.woocommerce-account .woocommerce:has(#customer_login),
+body.psa-wc-active.woocommerce-account .woocommerce:has(form.woocommerce-form-login) {
+  box-sizing:border-box;
+  width:min(100%,1160px)!important;
+  max-width:1160px!important;
+  margin-inline:auto!important;
+  padding-inline:clamp(12px,3vw,28px)!important;
+}
+body.psa-wc-active.woocommerce-account .psa-woo-hero {
+  box-sizing:border-box;
+  background:var(--psa-art);
+  color:#ffffff!important;
+  border-radius:var(--psa-radius);
+  padding:clamp(24px,4.3vw,46px)!important;
+  margin:20px 0 28px!important;
+  min-height:148px;
+  position:relative;
+  isolation:isolate;
+  box-shadow:0 12px 32px rgba(23,22,53,.08);
+}
+body.psa-wc-active.woocommerce-account .psa-woo-hero :is(.psa-hero-kicker,h2,p,span) {
+  color:#ffffff!important;
+  opacity:1!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.14);
+}
+body.psa-wc-active.woocommerce-account .psa-woo-hero h2 {font-size:clamp(26px,4.5vw,40px)!important;line-height:1.17!important;font-weight:760!important;margin:9px 0 10px!important}
+body.psa-wc-active.woocommerce-account .psa-woo-hero p {font-size:clamp(14px,2vw,17px)!important;line-height:1.6!important}
+body.psa-wc-active.woocommerce-account .psa-woo-hero .psa-hero-kicker {font-size:11px!important;letter-spacing:.19em}
+body.psa-wc-active.woocommerce-account .psa-account-jump{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:-8px 0 24px!important}
+body.psa-wc-active.woocommerce-account .psa-account-jump a{font-size:14px!important;font-weight:730!important;text-decoration:none!important;display:inline-flex;padding:11px 20px;background:var(--psa-panel)!important;color:var(--psa-ink)!important;border:1px solid var(--psa-field-line)!important;border-radius:999px!important}
+body.psa-wc-active.woocommerce-account .psa-account-jump a:first-child{background:var(--psa-accent)!important;color:#fff!important}
+body.psa-wc-active.woocommerce-account .psa-account-jump a:focus-visible{outline:3px solid var(--psa-accent);outline-offset:3px}
+body.psa-wc-active.woocommerce-account :is(#psa-account-login,#psa-account-register){scroll-margin-top:105px}
+/* WooCommerce native column set + WoodMart wrappers. Desktop cards have equal visual weight. */
+body.psa-wc-active.woocommerce-account #customer_login,
+body.psa-wc-active.woocommerce-account .woocommerce #customer_login {
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:clamp(16px,2.4vw,26px)!important;
+  align-items:stretch!important;
+  width:100%!important;
+  margin:0 0 25px!important;
+  padding:0!important;
+  background:none!important;
+  border:0!important;
+  overflow:visible!important;
+}
+body.psa-wc-active.woocommerce-account #customer_login:before,
+body.psa-wc-active.woocommerce-account #customer_login:after {display:none!important}
+body.psa-wc-active.woocommerce-account #customer_login > :is(.u-column1,.u-column2,.col-1,.col-2),
+body.psa-wc-active.woocommerce-account .woocommerce :is(.wd-registration-page,.wd-login-register) > :is(.col-login,.col-register) {
+  box-sizing:border-box!important;
+  display:block!important;
+  float:none!important;
+  clear:none!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  height:auto!important;
+  margin:0!important;
+  padding:clamp(22px,3.5vw,38px)!important;
+  background:var(--psa-panel)!important;
+  color:var(--psa-ink)!important;
+  border:1px solid var(--psa-field-line)!important;
+  border-radius:var(--psa-radius)!important;
+  box-shadow:var(--psa-card-shadow)!important;
+  align-self:stretch!important;
+  position:relative;
+}
+/* WoodMart may use forms without #customer_login (custom Login/Register builders).
+   Style their forms, but never hijack authentication or hide arbitrary fields. */
+body.psa-wc-active.woocommerce-account .woocommerce :is(form.woocommerce-form-login,form.woocommerce-form-register,form.login,form.register),
+body.psa-wc-active.woocommerce-account .wd-registration-page :is(form.login,form.register),
+body.psa-wc-active.woocommerce-account .wd-login-register :is(form.login,form.register) {
+  box-sizing:border-box!important;
+  color:var(--psa-ink)!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+  margin:0!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  border-radius:0!important;
+}
+/* When a theme renders only a single form and no #customer_login, present it as a full card. */
+body.psa-wc-active.woocommerce-account .woocommerce:not(:has(#customer_login)) > :is(form.woocommerce-form-login,form.woocommerce-form-register) {
+  background:var(--psa-panel)!important;
+  border:1px solid var(--psa-field-line)!important;
+  border-radius:var(--psa-radius)!important;
+  padding:clamp(22px,4vw,38px)!important;
+  max-width:580px!important;
+  margin:0 auto 28px!important;
+  box-shadow:var(--psa-card-shadow)!important;
+}
+/* Typography: strong scoped overrides prevent WoodMart's color-scheme-light from hiding content. */
+body.psa-wc-active.woocommerce-account .woocommerce :is(#customer_login,.wd-registration-page,.wd-login-register) :is(h1,h2,h3,h4,h5,h6,.title,.wd-title,.wd-heading,.title-wrapper),
+body.psa-wc-active.woocommerce-account .woocommerce :is(h2.wd-form-title,h3.wd-form-title) {
+  color:var(--psa-ink)!important;
+  -webkit-text-fill-color:var(--psa-ink)!important;
+  opacity:1!important;
+  visibility:visible!important;
+  font-weight:750!important;
+  text-shadow:none!important;
+}
+body.psa-wc-active.woocommerce-account #customer_login h2 {
+  font-size:clamp(24px,2.8vw,30px)!important;
+  line-height:1.22!important;
+  margin:0 0 23px!important;
+  letter-spacing:-.03em!important;
+}
+body.psa-wc-active.woocommerce-account .woocommerce :is(#customer_login,.wd-registration-page,.wd-login-register,.woocommerce-form-login,.woocommerce-form-register) :is(p,li,span,small,strong,em,label,legend,.description,.form-row,.woocommerce-privacy-policy-text,.woocommerce-LostPassword,.register-info,.register-text,.create-account-question,.col-register-text) {
+  color:var(--psa-ink)!important;
+  -webkit-text-fill-color:var(--psa-ink)!important;
+  opacity:1!important;
+  visibility:visible!important;
+  text-shadow:none!important;
+}
+body.psa-wc-active.woocommerce-account .woocommerce :is(#customer_login,.wd-registration-page,.wd-login-register,.woocommerce-form-login,.woocommerce-form-register) :is(p,li,small,.woocommerce-privacy-policy-text,.description,.create-account-question) {
+  line-height:1.68!important;
+}
+body.psa-wc-active.woocommerce-account .woocommerce :is(#customer_login,.wd-registration-page,.wd-login-register,.woocommerce-form-login,.woocommerce-form-register) :is(label,legend) {
+  display:inline-block;
+  font-size:14px!important;
+  font-weight:650!important;
+  line-height:1.5!important;
+  margin-bottom:7px;
+}
+body.psa-wc-active.woocommerce-account .woocommerce :is(#customer_login,.wd-registration-page,.wd-login-register,.woocommerce-form-login,.woocommerce-form-register) :is(a,a span) {
+  color:var(--psa-accent)!important;
+  -webkit-text-fill-color:var(--psa-accent)!important;
+  opacity:1!important;
+  text-decoration-color:currentColor!important;
+}
+body.psa-wc-active.woocommerce-account .woocommerce :is(#customer_login,.wd-registration-page,.wd-login-register) :is(a,button,input,select,textarea):focus-visible {
+  outline:3px solid var(--psa-accent)!important;
+  outline-offset:3px!important;
+}
+body.psa-wc-active.woocommerce-account .woocommerce :is(#customer_login,.wd-registration-page,.wd-login-register,.woocommerce-form-login,.woocommerce-form-register) :is(input.input-text,input[type="text"],input[type="email"],input[type="password"],input[type="tel"],select,textarea) {
+  box-sizing:border-box!important;
+  color:var(--psa-ink)!important;
+  -webkit-text-fill-color:var(--psa-ink)!important;
+  background:var(--psa-field)!important;
+  border:1px solid var(--psa-field-line)!important;
+  border-radius:12px!important;
+  box-shadow:none!important;
+  opacity:1!important;
+  font-size:16px!important;
+  line-height:1.4!important;
+  min-height:50px!important;
+  width:100%!important;
+  max-width:100%!important;
+  padding:11px 15px!important;
+}
+body.psa-wc-active.woocommerce-account .woocommerce :is(#customer_login,.wd-registration-page,.wd-login-register) :is(input,textarea)::placeholder {color:#697082!important;opacity:1!important}
+body.psa-wc-active.woocommerce-account .woocommerce :is(#customer_login,.wd-registration-page,.wd-login-register) :is(input,select,textarea):focus {
+  border-color:var(--psa-accent)!important;
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--psa-accent) 16%,transparent)!important;
+}
+body.psa-wc-active.woocommerce-account .woocommerce :is(#customer_login,.wd-registration-page,.wd-login-register) :is(input[type="checkbox"],input[type="radio"]) {
+  width:auto!important;
+  min-height:0!important;
+  accent-color:var(--psa-accent)!important;
+}
+body.psa-wc-active.woocommerce-account #customer_login .form-row {box-sizing:border-box;min-width:0;margin-bottom:18px}
+body.psa-wc-active.woocommerce-account #customer_login .woocommerce-form-login__rememberme {display:inline-flex!important;align-items:center;gap:9px;flex-wrap:wrap}
+body.psa-wc-active.woocommerce-account :is(#customer_login,.wd-registration-page,.wd-login-register) :is(button[type="submit"],input[type="submit"],.woocommerce-button[type="submit"],.button[name="register"],.button[name="login"]) {
+  display:inline-flex!important;align-items:center;justify-content:center;
+  width:100%!important;
+  max-width:100%!important;
+  min-height:51px!important;
+  padding:12px 18px!important;
+  background:var(--psa-accent)!important;
+  color:#ffffff!important;
+  -webkit-text-fill-color:#ffffff!important;
+  border:0!important;
+  border-radius:var(--psa-btn-radius)!important;
+  box-shadow:0 8px 24px color-mix(in srgb,var(--psa-accent) 23%,transparent)!important;
+  font-size:15px!important;
+  font-weight:750!important;
+  line-height:1.4!important;
+  cursor:pointer;
+  text-decoration:none!important;
+  transition:transform .18s ease,filter .18s ease;
+}
+body.psa-wc-active.woocommerce-account :is(#customer_login,.wd-registration-page,.wd-login-register) :is(button[type="submit"],input[type="submit"]):hover {transform:translateY(-2px);filter:brightness(.92)}
+body.psa-wc-active.woocommerce-account .woocommerce .woocommerce-privacy-policy-text,
+body.psa-wc-active.woocommerce-account .woocommerce .woocommerce-privacy-policy-text p {
+  font-size:13px!important;line-height:1.7!important;color:var(--psa-ink)!important;
+  -webkit-text-fill-color:var(--psa-ink)!important;opacity:1!important;
+}
+body.psa-wc-active.woocommerce-account .woocommerce :is(.woocommerce-error,.woocommerce-info,.woocommerce-message){color:#1b334e!important;background:#eef6ff!important;border-radius:12px!important;padding:18px!important;opacity:1!important}
+/* Native WordPress login uses the same palette; forms and recovery links remain untouched. */
+body.login.psa-active #login :is(form,label,#nav,#backtoblog,.message,p) {color:var(--psa-ink)!important;opacity:1!important}
+body.login.psa-active #login :is(input[type="text"],input[type="password"],input[type="email"]) {background:#fff!important;color:#222!important;-webkit-text-fill-color:#222!important}
+@media(max-width:780px){
+  body.psa-wc-active.woocommerce-account #customer_login {grid-template-columns:minmax(0,1fr)!important;gap:18px!important}
+  body.psa-wc-active.woocommerce-account #customer_login > :is(.u-column1,.u-column2,.col-1,.col-2) {padding:clamp(20px,5vw,28px)!important}
+  body.psa-wc-active.woocommerce-account .psa-woo-hero {margin-block:10px 20px!important;padding:28px 24px!important;min-height:0}
+  body.psa-wc-active.woocommerce-account .psa-woo-hero h2 {font-size:clamp(25px,7vw,32px)!important}
+}
+@media(max-width:400px){body.psa-wc-active.woocommerce-account .woocommerce:has(#customer_login){padding-inline:12px!important}}
+@media(prefers-reduced-motion:reduce){body.psa-wc-active.woocommerce-account :is(#customer_login,.wd-registration-page,.wd-login-register) *{transition:none!important;animation:none!important}}
+/* Theme font resets must not revert the premium account forms to browser serif defaults. */
+body.psa-wc-active.woocommerce-account .woocommerce :is(#customer_login,.wd-registration-page,.wd-login-register,.psa-woo-hero,.psa-account-jump),
+body.psa-wc-active.woocommerce-account .woocommerce :is(#customer_login,.wd-registration-page,.wd-login-register) :is(h1,h2,h3,label,button,input,select,textarea,p,small,div) {
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+}
+@media(max-width:780px){
+  body.psa-wc-active.woocommerce-account .woocommerce #customer_login,
+  body.psa-wc-active.woocommerce-account #customer_login {grid-template-columns:minmax(0,1fr)!important;}
+}

@@ -1,0 +1,72 @@
+/* v1.6.0: reference-resolution device preview; scale the FRAME rather than the loader. */
+.ps-admin .ps-device-stage{position:relative;width:100%;min-width:0;height:310px;overflow:hidden;border:1px solid #e6eaf5;background:radial-gradient(circle at 40% 5%,#f7f7ff,#eef0fb 70%);border-radius:18px;padding:0;margin:0;isolation:isolate}
+.ps-admin .ps-device-shell{position:absolute;top:0;left:0;width:var(--ps-device-width,390px)!important;height:var(--ps-device-height,844px)!important;max-width:none!important;min-height:0!important;box-sizing:border-box;transform:scale(var(--ps-device-scale,.55));transform-origin:top left;overflow:hidden;background:#fff;border:9px solid #20263d;border-radius:49px;box-shadow:0 25px 60px #141c4255,0 0 0 1px #ffffff55 inset}
+.ps-admin .ps-device-shell--tablet{border-width:10px;border-radius:33px}
+.ps-admin .ps-device-shell--desktop{border:10px solid #323951;border-radius:22px}
+.ps-admin .ps-device-shell--mobile:before,.ps-admin .ps-device-shell--tablet:before{content:'';position:absolute;z-index:5;top:0;left:50%;width:120px;height:25px;border-radius:0 0 17px 17px;transform:translateX(-50%);background:#20263d}
+.ps-admin .ps-device-shell--tablet:before{width:15px;height:15px;top:10px;border-radius:50%}
+.ps-admin .ps-device-meta{font-size:11px;line-height:1.5;color:#5f6783;margin:10px 2px 1px;text-align:center;font-variant-numeric:tabular-nums}
+.ps-admin #ps-device-shell .ps-preview-screen{width:100%!important;height:100%!important;min-height:0!important;position:absolute!important;inset:0!important;margin:0!important;border:0!important;border-radius:0!important;display:flex;align-items:center;justify-content:center}
+.ps-admin #ps-device-shell .ps-preview-center{flex:0 1 auto;padding:18px;max-width:100%;width:auto;gap:16px;position:relative}
+.ps-admin #ps-device-shell .ps-preview-center .ps-preview-caption{font-size:var(--ps-font-size,14px)!important}
+.ps-admin #ps-device-shell .ps-preview-center .ps-preview-percent{font-size:12px}
+.ps-admin .ps-device-topbar,.ps-admin .ps-device-browser,.ps-admin .ps-device-home-bar{pointer-events:none;position:absolute;z-index:7}
+.ps-admin .ps-device-topbar{top:12px;left:0;right:0;padding:3px 25px;display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:800;letter-spacing:.015em;color:#5d6476}
+.ps-admin .ps-device-notch{width:95px;display:block}
+.ps-admin .ps-device-browser{display:none;top:0;left:0;right:0;height:51px;background:linear-gradient(180deg,#f7f8fc,#f0f2f9);border-bottom:1px solid #dce0ee;align-items:center;gap:15px;padding:0 20px;font-size:15px;color:#58627b}
+.ps-admin .ps-device-window-dots{display:flex;gap:8px}
+.ps-admin .ps-device-window-dots i{width:11px;height:11px;display:block;background:#fa8a88;border-radius:50%}
+.ps-admin .ps-device-window-dots i:nth-child(2){background:#f9c95a}
+.ps-admin .ps-device-window-dots i:nth-child(3){background:#6ecb91}
+.ps-admin .ps-device-address{background:#fff;border:1px solid #dce0eb;border-radius:9px;text-align:center;line-height:28px;flex:1;max-width:520px}
+.ps-admin .ps-device-browser-menu{margin-left:auto;font-size:22px}
+.ps-admin .ps-device-home-bar{height:5px;width:115px;background:#6c7283;border-radius:100px;bottom:12px;left:50%;transform:translateX(-50%)}
+.ps-admin .ps-device-shell--desktop .ps-device-topbar,.ps-admin .ps-device-shell--desktop .ps-device-home-bar{display:none}
+.ps-admin .ps-device-shell--desktop .ps-device-browser{display:flex}
+.ps-admin .ps-device-shell--tablet .ps-device-topbar{top:23px;padding:4px 38px}
+.ps-admin .ps-device-shell--tablet .ps-device-home-bar{width:150px;bottom:19px}
+/* Navigation studio uses precisely the same CSS pixel sizes as the live frontend. */
+.ps-admin #psn-device-stage #psn-phone{margin:0!important;max-width:none!important;min-height:0!important;transition:none!important;padding:0!important}
+.ps-admin #psn-device-stage .psn-phone-content{padding:75px 32px 25px}
+.ps-admin #psn-device-stage .psn-phone-top{height:51px;padding:14px 26px;font-size:14px;background:#fff}
+.ps-admin #psn-device-stage .psn-phone-hero{height:135px;font-size:20px}
+.ps-admin #psn-device-stage .psn-phone-line{height:13px;margin-top:20px}
+.ps-admin #psn-device-stage .psn-phone-tile{height:110px;margin-top:25px}
+.ps-admin #psn-device-stage #psn-live-nav.psn-nav{position:absolute!important;top:auto!important;left:50%!important;right:auto!important;bottom:var(--psn-effective-bottom-offset,var(--psn-bottom-offset))!important;transform:translateX(-50%)!important;width:min(var(--psn-effective-menu-width,var(--psn-menu-width)),100%)!important;max-width:none!important;min-height:var(--psn-effective-menu-height,var(--psn-menu-height))!important;padding:8px max(9px,env(safe-area-inset-right)) 8px max(9px,env(safe-area-inset-left))!important;border-radius:var(--psn-menu-radius) var(--psn-menu-radius) 0 0!important;gap:var(--psn-item-gap)!important}
+.ps-admin #psn-device-stage #psn-live-nav.psn-nav .psn-item{min-height:49px!important;padding:6px 2px!important;gap:3px!important;border-radius:var(--psn-item-radius)!important;max-width:190px!important}
+.ps-admin #psn-device-stage #psn-live-nav.psn-nav .psn-icon-shell{width:calc(var(--psn-effective-icon-size,var(--psn-icon-size)) + 5px)!important;height:calc(var(--psn-effective-icon-size,var(--psn-icon-size)) + 5px)!important}
+.ps-admin #psn-device-stage #psn-live-nav.psn-nav svg.psn-icon{width:var(--psn-effective-icon-size,var(--psn-icon-size))!important;height:var(--psn-effective-icon-size,var(--psn-icon-size))!important}
+.ps-admin #psn-device-stage #psn-live-nav.psn-nav .psn-label{font-size:var(--psn-effective-label-size,var(--psn-label-size))!important}
+.ps-admin #psn-device-stage #psn-live-nav.psn-nav.psn-style--floating-island,
+.ps-admin #psn-device-stage #psn-live-nav.psn-nav.psn-style--glass-dock,
+.ps-admin #psn-device-stage #psn-live-nav.psn-nav.psn-style--outline-rail,
+.ps-admin #psn-device-stage #psn-live-nav.psn-nav.psn-style--frosted-slate{bottom:calc(var(--psn-effective-bottom-offset,var(--psn-bottom-offset)) + 12px)!important;width:min(var(--psn-effective-menu-width,var(--psn-menu-width)),calc(100% - 24px))!important;border-radius:var(--psn-menu-radius)!important}
+.ps-admin #psn-device-stage #psn-live-nav.psn-nav.psn-style--gradient-wave .psn-item{color:white!important}
+.ps-admin #psn-device-stage #psn-phone.ps-device-shell--tablet .psn-phone-content{padding-top:100px}
+.ps-admin #psn-device-stage #psn-phone.ps-device-shell--tablet .psn-phone-hero{height:210px}
+.ps-admin #psn-device-stage #psn-phone.ps-device-shell--tablet .psn-phone-top{height:70px;padding:22px 40px}
+.ps-admin #psn-device-stage #psn-phone.ps-device-shell--tablet #psn-live-nav.psn-nav{max-width:780px!important}
+@media(max-width:782px){.ps-admin .ps-device-stage{border-radius:13px}.ps-admin .ps-device-meta{font-size:10px}.ps-admin .psn-preview-sidebar{max-width:100%}}
+@media(prefers-reduced-motion:reduce){.ps-admin .ps-device-shell{transition:none!important}}
+
+/* v1.6.0 expanded reference-resolution preview: foreground modal, close with X or Escape. */
+.ps-admin .ps-preview-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px}
+.ps-admin .ps-device-stage.is-expanded{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;height:100dvh!important;max-width:none!important;z-index:1000000!important;border-radius:0!important;border:0!important;background:radial-gradient(circle at 45% 15%,#f4f1ff,#e4e8f7 72%)!important}
+.ps-admin .ps-device-stage .ps-device-close{position:absolute;top:14px;right:14px;z-index:9999;display:none;align-items:center;gap:4px;background:#fff;color:#323b56;border:1px solid #cbd0e2;padding:10px 16px;border-radius:30px;box-shadow:0 4px 15px #18234220;font-size:13px;font-weight:750;cursor:pointer}
+.ps-admin .ps-device-stage.is-expanded .ps-device-close{display:flex}
+.ps-admin .psn-device-expand{display:block;margin:10px auto 0!important;min-height:33px!important;font-size:11px!important}
+@media(max-width:460px){.ps-admin .ps-preview-actions{flex:1;justify-content:flex-end}.ps-admin .ps-preview-footer{align-items:flex-start}}
+
+/* v1.7.0 rotated reference viewports, preserving scaled CSS pixels. */
+.ps-admin .ps-device-shell[data-orientation="landscape"]{border-radius:30px}
+.ps-admin .ps-device-shell[data-orientation="landscape"]:before{width:23px;height:100px;top:50%;left:0;transform:translateY(-50%);border-radius:0 16px 16px 0}
+.ps-admin .ps-device-shell[data-orientation="landscape"] .ps-device-home-bar{bottom:auto;left:auto;right:13px;top:50%;width:5px;height:110px;transform:translateY(-50%)}
+.ps-admin .ps-device-shell[data-orientation="landscape"] .ps-device-topbar{padding-left:46px;padding-right:32px}
+.ps-admin #psn-device-stage #psn-phone[data-orientation="landscape"] .psn-phone-content{padding:48px 35px}
+.ps-admin #psn-device-stage #psn-phone[data-orientation="landscape"] .psn-phone-hero{height:90px}
+.ps-admin .ps-device-rotate{border:1px solid #d8dded;background:#fff;color:#4d44ac;border-radius:7px;padding:6px 12px;font-size:12px;font-weight:700;cursor:pointer}
+.ps-admin .psn-rotate-button{margin-left:7px!important}
+.ps-admin .ps-device-stage.is-expanded .ps-device-shell{box-shadow:0 25px 60px #141c4255}
+
+/* v1.8: the floating Emerald Capsule uses its real floating geometry in the editor. */
+.ps-admin #psn-device-stage #psn-live-nav.psn-style--emerald-capsule{bottom:calc(var(--psn-effective-bottom-offset,var(--psn-bottom-offset)) + 14px)!important;width:min(var(--psn-effective-menu-width,var(--psn-menu-width)),calc(100% - 28px))!important;border-radius:var(--psn-menu-radius)!important}

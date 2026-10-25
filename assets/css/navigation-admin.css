@@ -1,0 +1,208 @@
+/* v1.3 organized admin navigation and mobile-menu builder */
+.ps-admin .ps-header-navigation{position:sticky;top:32px;z-index:120;display:flex;align-items:center;gap:6px;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;background:#fff;border:1px solid #e6e7f2;border-radius:15px;padding:9px;box-shadow:0 10px 28px #27325b17;margin-bottom:20px}
+.ps-admin .ps-header-navigation a{display:inline-flex;align-items:center;gap:7px;flex:none;white-space:nowrap;text-decoration:none!important;font-weight:650;font-size:12px;border-radius:9px;padding:10px 13px;color:#545b75;transition:background .12s}
+.ps-admin .ps-header-navigation a .dashicons{font-size:16px;width:16px;height:16px}
+.ps-admin .ps-header-navigation a:hover,.ps-admin .ps-header-navigation a.is-active{color:#5646c4;background:#eeecff}
+.ps-admin .ps-header-navigation a.ps-header-nav-feature{color:#fff;background:linear-gradient(120deg,#7164e8,#5744bc)}
+.ps-admin .ps-header-navigation a.ps-header-nav-feature:hover,.ps-admin .ps-header-navigation a.ps-header-nav-feature.is-active{background:#36268e;color:white}
+.ps-admin [id$="-panel"]{scroll-margin-top:123px}
+.ps-admin .ps-nav-panel{margin-top:21px;padding:28px}
+.ps-nav-panel>.ps-panel-head h2 .dashicons{color:#6557ed;margin-right:4px}
+.psn-admin-grid{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:25px;align-items:start}
+.psn-admin-editor{display:flex;flex-direction:column;gap:14px;min-width:0}
+.psn-setting-block{background:#fbfcff;border:1px solid #e6e9f4;border-radius:13px;padding:18px}
+.psn-setting-block h3{font-size:14px;color:#242b48;margin:0 0 15px;font-weight:750}
+.psn-setting-block .ps-fields-grid{gap:14px 20px;margin:13px 0 15px}
+.psn-setting-block .ps-toggle-row{padding:10px 0}
+.psn-setting-block .ps-theme-info{margin:12px 0}
+.psn-style-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:8px 0 17px}
+.psn-style-option{border:1.5px solid #e2e7f3;background:#fff;border-radius:12px;padding:12px 7px;min-width:0;cursor:pointer;text-align:center;color:#4f5672;font-size:11px;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:12px}
+.psn-style-option.is-selected{border-color:#7260e8;background:#f5f2ff;box-shadow:0 0 0 2px #7260e826}
+.psn-style-option:focus-visible{outline:3px solid #6657ed;outline-offset:2px}
+.psn-style-option .psn-style-sample{width:100%;display:flex;gap:5px;height:35px;align-items:center;justify-content:center;border-radius:12px;background:#f0f1fc;color:#7361e9;overflow:hidden}
+.psn-style-option .psn-style-sample svg{width:18px;height:18px}
+.psn-style-option[data-style="neon-night"] .psn-style-sample,.psn-style-option[data-style="frosted-slate"] .psn-style-sample{background:#1d243b;color:#cdb6ff}
+.psn-style-option[data-style="gradient-wave"] .psn-style-sample{background:linear-gradient(110deg,#7161e9,#b568e8);color:white}
+.psn-style-option[data-style="floating-island"] .psn-style-sample{border-radius:50px;box-shadow:0 3px 9px #10114a3d}
+.psn-style-option[data-style="minimal-line"] .psn-style-sample{border-radius:0;border-top:2px solid #7261e9}
+.psn-style-option[data-style="rounded-cards"] .psn-style-sample svg{background:#fff;padding:2px;border-radius:5px}
+.psn-style-option[data-style="outline-rail"] .psn-style-sample{border:2px solid #7161e9}
+.psn-style-option[data-style="bubble-pop"] .psn-style-sample svg:nth-child(2){transform:translateY(-5px)}
+.psn-style-option[data-style="sunset-glow"] .psn-style-sample{background:linear-gradient(110deg,#fff1e5,#ffd8ea);color:#cc5f76}
+.psn-inline-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.psn-inline-heading h3{margin:0}
+.psn-menu-items{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.psn-item-editor{border:1px solid #e1e5f1;border-radius:13px;background:#fff;padding:12px;min-width:0}
+.psn-item-editor.is-dragging{opacity:.55}.psn-item-editor.is-target{outline:2px solid #6657ed}
+.psn-item-head{display:flex;align-items:center;gap:8px;margin-bottom:12px;min-width:0}
+.psn-item-grip{color:#9c9db0;cursor:grab}.psn-item-num{font-size:12px;font-weight:750;color:#5b5e80;flex:1}.psn-item-head .button{min-width:30px;padding:0 8px;line-height:1}
+.psn-item-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.psn-item-fields .ps-field{gap:5px}.psn-item-fields .ps-field>span{font-size:11px}
+.psn-item-fields .ps-field input,.psn-item-fields .ps-field select{min-height:37px}
+.psn-item-editor .psn-wide{grid-column:1/-1}
+.psn-icon-picker{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:5px;padding:9px;background:#f6f7fc;border-radius:9px;max-height:190px;overflow-y:auto}
+.psn-icon-choice{border:1px solid transparent;background:transparent;border-radius:7px;display:flex;align-items:center;justify-content:center;min-height:37px;color:#5f6880;cursor:pointer}
+.psn-icon-choice:hover,.psn-icon-choice[aria-pressed="true"]{background:#e5e1ff;border-color:#8e7cf7;color:#5645c7}
+.psn-icon-choice svg{width:20px;height:20px}
+.psn-preview-sidebar{position:sticky;top:116px}.psn-preview-shell{background:linear-gradient(145deg,#f6f7ff,#ecedfa);padding:14px;border-radius:18px;border:1px solid #e5e4f4}
+.psn-preview-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px;color:#2e375b;font-size:12px}.psn-preview-heading .button{font-size:11px;padding:1px 8px;min-height:27px}.psn-preview-heading .is-active{color:#fff;background:#6355e9;border-color:#6355e9}
+.psn-phone{position:relative;width:100%;max-width:282px;height:490px;margin:auto;border:7px solid #1e263f;box-shadow:0 18px 36px #1e294b26;border-radius:34px;overflow:hidden;background:#fff;transition:max-width .2s,height .2s}
+.psn-phone.psn-tablet{max-width:100%;height:405px;border-radius:22px}
+.psn-phone-top{height:31px;display:flex;justify-content:space-between;align-items:center;padding:0 20px;font-size:10px;font-weight:750;color:#29324c}
+.psn-phone-content{padding:25px 16px}.psn-phone-hero{height:110px;background:linear-gradient(120deg,#e9e7fc,#e6f1fc);border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:750;color:#6860b5;font-size:18px}
+.psn-phone-line{background:#eef0f6;border-radius:9px;height:10px;margin:15px 6px 0}.psn-phone-line.short{width:66%}.psn-phone-tile{background:#f8f8fc;border:1px solid #eeeef7;height:80px;border-radius:14px;margin:17px 5px}
+.psn-phone .psn-nav{position:absolute!important;display:flex!important;z-index:10;left:0!important;right:0!important;bottom:0!important;top:auto!important;width:100%!important;max-width:none!important;transform:none!important;min-height:64px;padding:6px 5px 8px!important}
+.psn-phone .psn-nav.psn-style--floating-island,.psn-phone .psn-nav.psn-style--glass-dock,.psn-phone .psn-nav.psn-style--outline-rail,.psn-phone .psn-nav.psn-style--frosted-slate{bottom:8px!important;left:3%!important;width:94%!important}
+.psn-phone .psn-item{pointer-events:none;min-height:49px}.psn-phone .psn-label{font-size:9px}
+.psn-phone .psn-icon{width:21px;height:21px}.psn-phone .psn-item{max-width:none}
+.psn-preview-sidebar .description{font-size:11px;line-height:1.55;margin-top:13px}
+.psn-save-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 5px}.psn-save-row span{font-size:12px;color:#737b91}
+.ps-import-panel{margin-top:20px}.ps-tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.ps-tools-grid>div,.ps-tools-grid form{background:#fafbff;border:1px solid #e7e9f2;border-radius:13px;padding:16px}.ps-tools-grid h3{margin:0;color:#33395a;font-size:14px}.ps-tools-grid p{font-size:12px;line-height:1.6;color:#677085}.ps-tools-grid input[type=file]{max-width:100%;margin:5px 0 12px}
+@media(max-width:1220px){.psn-admin-grid{grid-template-columns:minmax(0,1fr) 285px}.psn-style-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:1060px){.psn-admin-grid{grid-template-columns:minmax(0,1fr)}.psn-preview-sidebar{position:static;order:-1}.psn-phone{height:420px;max-width:280px}}
+@media(max-width:782px){.ps-admin .ps-header-navigation{top:45px;padding:6px}.ps-admin .ps-nav-panel{padding:16px}.psn-setting-block{padding:12px}.psn-style-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}.psn-icon-picker{grid-template-columns:repeat(6,minmax(0,1fr))}.psn-admin-grid{gap:14px}.psn-item-fields{grid-template-columns:1fr 1fr}.ps-tools-grid{grid-template-columns:1fr}}
+@media(max-width:420px){.psn-item-fields{grid-template-columns:1fr}.psn-style-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.psn-inline-heading{align-items:flex-start}.psn-save-row{flex-direction:column;align-items:stretch}}
+
+/* Strictly honor dynamic field visibility even when theme/admin label rules use flex. */
+.psn-item-fields [hidden]{display:none!important}
+.psn-icon-picker[hidden]{display:none!important}
+.psn-icon-control{display:flex;align-items:center;gap:11px;padding:6px 0}.psn-icon-selected{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:9px;background:#eceaff;color:#6250d7;flex:none}
+.psn-item-checkbox{display:flex;align-items:center;gap:9px;grid-column:1/-1;margin:3px 0;color:#5f667d;font-size:12px;font-weight:600}.psn-item-checkbox input{min-height:auto;width:16px;height:16px}
+
+/* v1.4.1 honest preview and publish diagnostics */
+.ps-admin .psn-item-warning{margin:8px 0 0;color:#9f2e33;font-size:12px;font-weight:650}
+.ps-admin .psn-item-editor.is-incomplete{border-color:#edc2c0;background:#fffaf9}
+.ps-admin .psn-status-error{color:#a12c34!important;font-weight:750}
+.ps-admin .psn-preview-notice{font-size:11px;font-weight:650;color:#5251a1;margin:12px 0 0;line-height:1.5}
+.ps-admin .psn-setup-hint,.ps-admin .psn-explainer{font-size:12px;line-height:1.5;color:#596177;margin:8px 0}
+.ps-admin .psn-site-warning{margin-bottom:15px}
+.ps-admin .psn-inline-heading{flex-wrap:wrap}
+.ps-admin .psn-phone .psn-nav button.psn-item{border:0;cursor:pointer;padding:6px 2px}
+.ps-admin .psn-phone .psn-nav.psn-style--floating-island button.psn-item.is-active,
+.ps-admin .psn-phone .psn-nav.psn-style--rounded-cards button.psn-item.is-active{background:var(--psn-accent);color:var(--psn-active)}
+.ps-admin .psn-phone .psn-nav button.psn-item.is-active .psn-icon,.ps-admin .psn-phone .psn-nav button.psn-item.is-active .psn-label{color:inherit}
+.ps-admin .psn-phone .psn-nav button.psn-item{pointer-events:auto}
+.ps-admin .psn-phone .psn-nav button.psn-item:focus-visible{outline:2px solid var(--psn-accent)}
+.ps-admin .psn-phone .psn-nav button.psn-item.is-active{font-size:inherit}
+
+/* v1.5.0: richer studio sections, realtime sizing and searchable icon gallery. */
+.ps-admin .ps-nav-panel>.ps-panel-head {padding:10px 0 8px;margin-bottom:15px}
+.ps-admin .psn-setting-block{background:linear-gradient(180deg,#fff 0%,#fcfcff 100%);border-color:#e6e8f3;border-radius:18px;padding:20px;box-shadow:0 5px 22px #28305a06}
+.ps-admin .psn-setting-block h3{font-size:15px;letter-spacing:-.025em;color:#242447}
+.ps-admin .psn-style-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.ps-admin .psn-style-option{position:relative;padding:12px 9px;border-radius:14px;min-height:95px;justify-content:center;transition:transform .2s,box-shadow .2s,border-color .2s}
+.ps-admin .psn-style-option:hover{transform:translateY(-2px);border-color:#b1a7f9;box-shadow:0 8px 18px #48419b19}
+.ps-admin .psn-style-option.is-selected{box-shadow:0 0 0 2px #7766e927,0 8px 22px #4e469822}
+.ps-admin .psn-style-option.is-selected:after{content:'✓';position:absolute;top:4px;right:6px;background:#5d50d8;color:#fff;width:16px;height:16px;border-radius:50%;line-height:16px;font-size:10px}
+.ps-admin .psn-style-option .psn-style-sample{height:39px}
+.ps-admin .psn-size-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 17px;margin-top:17px}
+.ps-admin .psn-size-field{min-width:0;display:flex;flex-direction:column;gap:9px;padding:12px 14px;background:#f8f9ff;border:1px solid #e6e9f8;border-radius:12px}
+.ps-admin .psn-size-label{display:flex;justify-content:space-between;gap:8px;align-items:center;color:#343753;font-size:12px;font-weight:700}
+.ps-admin .psn-size-label output{color:#6055d4;font-size:11px;font-variant-numeric:tabular-nums;background:#eae7ff;border-radius:7px;min-width:46px;padding:5px 7px;text-align:center;font-weight:750}
+.ps-admin .psn-size-field input[type=range]{width:100%;min-width:0;accent-color:#6658e7;cursor:pointer;margin:4px 0 2px}
+.ps-admin .psn-icon-control{gap:10px;flex-wrap:wrap}
+.ps-admin .psn-icon-selected{width:46px;height:46px;border:1px solid #dad8f9;border-radius:13px;box-shadow:0 5px 13px #5f4fc412}
+.ps-admin .psn-icon-selected svg{width:25px;height:25px}
+.ps-admin .psn-choose-icon{min-height:42px;padding:6px 12px!important}
+.ps-admin .psn-icon-browser{padding:12px;margin-top:7px;border:1px solid #e2e4f1;background:#f7f8fe;border-radius:16px;box-shadow:inset 0 1px 0 #fff}
+.ps-admin .psn-icon-toolbar{display:grid;grid-template-columns:minmax(0,1fr) minmax(130px,.65fr) auto;gap:8px;align-items:center;margin-bottom:10px}
+.ps-admin .psn-icon-search,.ps-admin .psn-icon-category{height:40px;min-height:40px;margin:0!important;width:100%;border:1px solid #dce0ed;border-radius:9px;font-size:12px;background:#fff;color:#34364d}
+.ps-admin .psn-icon-count{white-space:nowrap;font-size:11px;color:#6255c9;font-weight:750}
+.ps-admin .psn-icon-picker{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px;max-height:268px;overflow:auto;background:transparent;padding:2px}
+.ps-admin .psn-icon-choice{min-height:42px;background:#fff;border:1px solid #eceef8;border-radius:10px}
+.ps-admin .psn-icon-choice:hover,.ps-admin .psn-icon-choice[aria-pressed="true"]{background:#ebe7ff;border-color:#887af0;color:#5849d1;box-shadow:0 0 0 1px #b8aff035}
+.ps-admin .psn-icon-choice svg{width:21px;height:21px}
+.ps-admin .psn-item-editor{border-radius:16px;border-color:#e5e7f2;padding:16px}
+.ps-admin .psn-item-editor:focus-within{border-color:#c1b8f7;box-shadow:0 0 0 2px #6554ed0b}
+.ps-admin .psn-preview-shell{background:linear-gradient(150deg,#f5f3ff,#eff4ff);border-radius:22px;padding:15px}
+.ps-admin .psn-phone{box-shadow:0 20px 45px #18224b35}
+/* Mirror the real frontend menu using the same CSS variables, scaled down inside the phone mockup. */
+.ps-admin #psn-phone #psn-live-nav.psn-nav {
+  min-height:calc(var(--psn-menu-height) * .78) !important;
+  width:min(var(--psn-menu-width),100%) !important;
+  left:50% !important;
+  right:auto !important;
+  bottom:calc(var(--psn-bottom-offset) * .68) !important;
+  transform:translateX(-50%) !important;
+  gap:calc(var(--psn-item-gap) * .65) !important;
+  padding:5px 5px 7px!important;
+  border-radius:var(--psn-menu-radius) var(--psn-menu-radius) 0 0!important;
+}
+.ps-admin #psn-phone #psn-live-nav.psn-style--glass-dock,
+.ps-admin #psn-phone #psn-live-nav.psn-style--floating-island,
+.ps-admin #psn-phone #psn-live-nav.psn-style--outline-rail,
+.ps-admin #psn-phone #psn-live-nav.psn-style--frosted-slate {
+  width:min(var(--psn-menu-width),calc(100% - 14px))!important;
+  bottom:calc(8px + var(--psn-bottom-offset) * .68)!important;
+  border-radius:var(--psn-menu-radius)!important;
+}
+.ps-admin #psn-phone #psn-live-nav.psn-nav .psn-item {
+  min-height:max(37px,calc(var(--psn-menu-height) * .73 - 12px));
+  border-radius:var(--psn-item-radius);
+  gap:2px;
+  padding:3px 1px;
+}
+.ps-admin #psn-phone #psn-live-nav.psn-nav .psn-icon-shell {width:calc(var(--psn-icon-size) * .75 + 10px);height:calc(var(--psn-icon-size) * .75 + 9px)}
+.ps-admin #psn-phone #psn-live-nav.psn-nav svg.psn-icon {width:calc(var(--psn-icon-size) * .78);height:calc(var(--psn-icon-size) * .78)}
+.ps-admin #psn-phone #psn-live-nav.psn-nav .psn-label {font-size:calc(var(--psn-label-size) * .78);}
+.ps-admin #psn-phone #psn-live-nav.psn-nav svg.psn-fa-icon {stroke:none!important;fill:currentColor!important}
+@media(max-width:1220px){.ps-admin .psn-style-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:782px){.ps-admin .psn-setting-block{padding:16px}.ps-admin .psn-icon-toolbar{grid-template-columns:1fr 1fr}.ps-admin .psn-icon-count{grid-column:1/-1}.ps-admin .psn-icon-picker{grid-template-columns:repeat(7,minmax(0,1fr))}}
+@media(max-width:480px){.ps-admin .psn-size-grid{grid-template-columns:1fr}.ps-admin .psn-icon-picker{grid-template-columns:repeat(5,minmax(0,1fr))}.ps-admin .psn-style-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ps-admin .psn-icon-browser[hidden]{display:none!important}
+
+/* v1.7.0 independent responsive profiles & motion studio. */
+.ps-admin .psn-profile-card{border:1px solid #e2e5f2;background:#f9faff;border-radius:14px;padding:16px;margin-top:14px}
+.ps-admin .psn-profile-toggle{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px;color:#333759}
+.ps-admin .psn-profile-toggle input{width:19px;height:19px;accent-color:#6657ed}
+.ps-admin .psn-profile-card.is-disabled .psn-device-size-grid{opacity:.42;pointer-events:none}
+.ps-admin .psn-device-size-grid{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:15px}
+.ps-admin .psn-preview-heading>div{display:flex;align-items:center;flex-wrap:wrap;gap:5px}
+@media(max-width:420px){.ps-admin .psn-device-size-grid{grid-template-columns:1fr}.ps-admin .psn-profile-card{padding:12px}}
+
+/* v1.8.0: premium gallery with truly differentiated miniatures and categories */
+.ps-admin .psn-style-filters{display:flex;flex-wrap:wrap;gap:7px;margin:1px 0 14px}
+.ps-admin .psn-style-filter{font-size:12px;cursor:pointer;border:1px solid #e0e3f0;border-radius:30px;padding:8px 13px;color:#515b78;background:#fff;font-weight:700;transition:background .15s,border-color .15s}
+.ps-admin .psn-style-filter.is-active{background:#eeeaff;color:#5342ba;border-color:#b5a9ef}
+.ps-admin .psn-style-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.ps-admin .psn-style-option{min-height:115px;padding:13px 10px 10px;border-radius:17px;gap:9px;overflow:hidden}
+.ps-admin .psn-style-option .psn-style-sample{height:62px;border-radius:13px;padding:7px;background:#eef0fc;position:relative;overflow:visible;display:flex;align-items:center}
+.ps-admin .psn-style-option .psn-mini-bar{width:100%;min-height:42px;display:flex;align-items:center;justify-content:space-evenly;gap:4px;border-radius:inherit;padding:4px}
+.ps-admin .psn-style-option .psn-mini-item{display:flex;align-items:center;justify-content:center;min-width:28px;height:31px;position:relative;color:inherit;border-radius:9px}
+.ps-admin .psn-style-option .psn-mini-item svg{height:18px;width:18px;max-height:24px;max-width:24px;fill:none;stroke:currentColor}
+.ps-admin .psn-style-option .psn-style-title{font-size:11px;font-weight:780;color:#3b4261;text-align:center}
+.ps-admin .psn-style-option .psn-style-new-badge{position:absolute;top:5px;left:7px;padding:2px 5px;border-radius:5px;color:#064b42;background:#c5f7e7;font-size:8px;font-weight:900;letter-spacing:.07em}
+.ps-admin .psn-style-option[data-style="prism-arc"] .psn-style-sample{background:linear-gradient(110deg,#10152c,#33406e);color:#b7adff}
+.ps-admin .psn-style-option[data-style="prism-arc"] .is-active{background:#a997ff;color:#172244;clip-path:polygon(20% 0,80% 0,100% 50%,80% 100%,20% 100%,0 50%)}
+.ps-admin .psn-style-option[data-style="citrus-pop"] .psn-style-sample{background:linear-gradient(100deg,#fff8ca,#ffe99d);color:#bb822b;border-radius:27px 27px 10px 10px}
+.ps-admin .psn-style-option[data-style="citrus-pop"] .is-active{background:#ffac38;color:white;border-radius:50%;transform:rotate(-8deg)}
+.ps-admin .psn-style-option[data-style="ocean-tide"] .psn-style-sample{background:linear-gradient(115deg,#064558,#088682);color:#b3f8f5}
+.ps-admin .psn-style-option[data-style="ocean-tide"] .is-active{background:#9df1e8;color:#075167;border-radius:50%}
+.ps-admin .psn-style-option[data-style="bento-dock"] .psn-style-sample{background:#f4f1ed;color:#83889a}
+.ps-admin .psn-style-option[data-style="bento-dock"] .psn-mini-item{background:#fff;box-shadow:0 2px 7px #45362a22;border-radius:6px}
+.ps-admin .psn-style-option[data-style="bento-dock"] .is-active{background:#e75b6b;color:white;transform:translateY(-3px)}
+.ps-admin .psn-style-option[data-style="cyber-circuit"] .psn-style-sample{background:#081821;color:#53f6d2;border-top:2px solid #53f6d2;border-radius:3px}
+.ps-admin .psn-style-option[data-style="cyber-circuit"] .is-active{border:1px solid #53f6d2;box-shadow:0 0 10px #53f6d247;border-radius:2px}
+.ps-admin .psn-style-option[data-style="clay-bubble"] .psn-style-sample{background:#f8dfd0;color:#b5786a;border-radius:26px}
+.ps-admin .psn-style-option[data-style="clay-bubble"] .is-active{border-radius:16px;background:#f4d0ba;box-shadow:inset 3px 3px 6px #c8857740,inset -3px -3px 6px #fff9e7}
+.ps-admin .psn-style-option[data-style="sakura-petal"] .psn-style-sample{background:linear-gradient(105deg,#ffe7f2,#ffd8e8);color:#bd6190;border-radius:27px}
+.ps-admin .psn-style-option[data-style="sakura-petal"] .is-active{background:#df74a8;color:#fff;border-radius:70% 30% 65% 30%;transform:rotate(-12deg)}
+.ps-admin .psn-style-option[data-style="emerald-capsule"] .psn-style-sample{background:linear-gradient(110deg,#073d31,#0c5d46);color:#c9f6df;border-radius:35px}
+.ps-admin .psn-style-option[data-style="emerald-capsule"] .is-active{background:#b2f07c;color:#0f4b35;border-radius:20px}
+.ps-admin .psn-style-option[data-style="retro-pixel"] .psn-style-sample{background:#fff5cb;color:#50434c;border:2px solid #3a3245;border-radius:0;box-shadow:4px 4px 0 #f3b46c}
+.ps-admin .psn-style-option[data-style="retro-pixel"] .is-active{background:#3a3245;color:white;border-radius:0;box-shadow:3px 3px 0 #ffad6f}
+.ps-admin .psn-style-option[data-style="royal-velvet"] .psn-style-sample{background:linear-gradient(110deg,#20142d,#433049);color:#d7bd7d;border-radius:12px 12px 0 0;border-top:2px solid #d6af5f}
+.ps-admin .psn-style-option[data-style="royal-velvet"] .is-active{border-bottom:3px solid #f3cc84;border-radius:0}
+.ps-admin .psn-style-option[data-style="orbit-halo"] .psn-style-sample{background:linear-gradient(115deg,#0c1538,#334a82);color:#bacfff;border-radius:15px}
+.ps-admin .psn-style-option[data-style="orbit-halo"] .is-active{border:1px dashed #acc5ff;border-radius:50%;box-shadow:0 0 0 3px #99b7ff40}
+.ps-admin .psn-style-option[data-style="mono-editorial"] .psn-style-sample{background:white;color:#171717;border:1px solid #111;border-radius:0}
+.ps-admin .psn-style-option[data-style="mono-editorial"] .is-active{background:#151515;color:#fff;border-radius:0}
+/* Classic themes now preview their actual active treatments. */
+.ps-admin .psn-style-option[data-style="soft-pill"] .is-active,.ps-admin .psn-style-option[data-style="glass-dock"] .is-active{background:#dfdcff}
+.ps-admin .psn-style-option[data-style="glass-dock"] .psn-style-sample{background:#f0f3ffbb;border:1px solid #d4d9fa;border-radius:28px;box-shadow:0 4px 10px #43487727}
+.ps-admin .psn-style-option[data-style="neon-night"] .is-active,.ps-admin .psn-style-option[data-style="frosted-slate"] .is-active{background:#7771db55;border-radius:10px}
+.ps-admin .psn-style-option[data-style="floating-island"] .is-active,.ps-admin .psn-style-option[data-style="rounded-cards"] .is-active{background:#7b61ea;color:white}
+.ps-admin .psn-style-option[data-style="bubble-pop"] .is-active{background:#795dee;color:white;transform:translateY(-5px);border-radius:50%}
+.ps-admin .psn-style-option[data-style="gradient-wave"] .psn-style-sample{background:linear-gradient(90deg,#735ce9,#bb67d9)}
+.ps-admin .psn-style-option[data-style="sunset-glow"] .is-active{background:#ed91a2;color:white;border-radius:50%}
+@media(max-width:600px){.ps-admin .psn-style-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.ps-admin .psn-style-option{min-height:109px;padding:10px 7px}.ps-admin .psn-style-option .psn-style-sample{height:58px}}
+@media(prefers-reduced-motion:reduce){.ps-admin .psn-style-option,.ps-admin .psn-mini-item{transition:none!important;animation:none!important;transform:none!important}}

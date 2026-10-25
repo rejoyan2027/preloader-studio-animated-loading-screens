@@ -1,0 +1,66 @@
+/* v1.4.0: independent focused pages, native WordPress submenus and navigation. */
+.ps-admin-page .ps-section-tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center;background:#fff;border:1px solid #e3e7f1;border-radius:15px;padding:10px;margin:0 0 22px;box-shadow:0 2px 12px #16204008}
+.ps-admin-page .ps-section-tabs a{display:inline-flex;gap:7px;align-items:center;min-height:39px;padding:9px 12px;text-decoration:none;font-size:12px;font-weight:650;color:#47526b;border:1px solid transparent;border-radius:10px;white-space:nowrap;transition:background-color .15s ease}
+.ps-admin-page .ps-section-tabs a .dashicons{font-size:17px;width:18px;height:18px}
+.ps-admin-page .ps-section-tabs a:hover,.ps-admin-page .ps-section-tabs a:focus-visible{background:#f3f1ff;color:#5948cb}
+.ps-admin-page .ps-section-tabs a.is-active{background:linear-gradient(135deg,#6958e6,#5b4acc);color:#fff;box-shadow:0 4px 12px #6555df30}
+.ps-admin-page .ps-section-tabs a:focus-visible{outline:2px solid #7668f2;outline-offset:2px}
+.ps-admin-page .ps-layout{grid-template-columns:minmax(0,1fr) 330px;align-items:start}
+.ps-admin-page .ps-layout .ps-main{min-width:0}
+.ps-admin-page .ps-panel{min-width:0}
+.ps-admin-page .ps-nav-panel{margin-top:0}
+.ps-admin-page .ps-import-panel{margin-top:0}
+.ps-overview-hero{padding:30px;background:linear-gradient(115deg,#211b52,#5744c1 65%,#745fe3);color:#fff;border-radius:17px;display:flex;justify-content:space-between;gap:25px;align-items:center;margin-bottom:22px;box-shadow:0 12px 28px #4231a625}
+.ps-overview-hero h2{margin:6px 0 10px;font-size:28px;line-height:1.24;color:#fff}
+.ps-overview-hero p{margin:0;line-height:1.7;font-size:13px;color:#e9e4ff;max-width:570px}
+.ps-overview-kicker{font-weight:800;letter-spacing:.15em;font-size:10px;color:#cfc7ff}
+.ps-overview-status{display:flex;flex-direction:column;gap:12px;min-width:200px}
+.ps-overview-status span{display:block;border:1px solid #ffffff35;border-radius:9px;padding:12px 14px;background:#ffffff17;font-size:12px;white-space:nowrap}
+.ps-overview-status b{float:right;color:white}
+.ps-overview-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.ps-overview-card{display:flex;flex-direction:column;gap:14px;border:1px solid #e4e7f3;background:#fff;color:#273151!important;text-decoration:none;border-radius:14px;padding:19px;min-height:180px;box-shadow:0 2px 10px #1c28500a;transition:transform .15s,box-shadow .15s}
+.ps-overview-card:hover,.ps-overview-card:focus-visible{transform:translateY(-3px);box-shadow:0 9px 23px #291f7520;border-color:#c9c3ef}
+.ps-overview-card-icon{display:inline-flex;justify-content:center;align-items:center;width:44px;height:44px;border-radius:12px;background:#f0edff;color:#6655e2;font-size:22px}
+.ps-overview-card-body{display:flex;flex-direction:column;gap:7px;flex:1}
+.ps-overview-card-body strong{font-size:14px}
+.ps-overview-card-body small{font-size:12px;line-height:1.6;color:#6d778d}
+.ps-overview-card>.dashicons:last-child{align-self:flex-end;color:#8e83d9}
+.ps-library-hint{padding:11px 15px;background:#f7f8fe;border:1px solid #e5e8f3;border-radius:10px;color:#606c87;font-size:12px;line-height:1.65}
+.ps-page-designs .ps-topbar,.ps-page-designs .ps-bottom-save{display:none}
+.ps-admin-page .ps-panel:only-child{margin:0}
+@media(max-width:1420px){.ps-overview-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.ps-admin-page .ps-layout{grid-template-columns:minmax(0,1fr) 290px}}
+@media(max-width:1050px){.ps-admin-page .ps-layout{grid-template-columns:minmax(0,1fr)}.ps-admin-page .ps-sidebar{position:static;order:-1;display:block}.ps-admin-page .ps-preview-panel{max-width:100%}.ps-admin-page .ps-preview-screen{min-height:180px}.ps-overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:782px){.ps-admin-page .ps-section-tabs{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;position:static}.ps-admin-page .ps-section-tabs a{flex:0 0 auto}.ps-overview-hero{padding:23px;flex-direction:column;align-items:stretch}.ps-overview-hero h2{font-size:24px}.ps-overview-status{flex-direction:row;min-width:0;flex-wrap:wrap}.ps-overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ps-overview-card{min-height:160px}}
+@media(max-width:540px){.ps-overview-grid{grid-template-columns:1fr}.ps-overview-card{min-height:auto;padding:15px;flex-direction:row;align-items:center}.ps-overview-card-icon{flex:none}.ps-overview-card>.dashicons:last-child{flex:none;align-self:center}.ps-overview-status{flex-direction:column}.ps-admin-page .ps-section-tabs a{min-height:36px;padding:8px 10px}}
+@media(prefers-reduced-motion:reduce){.ps-overview-card,.ps-admin-page .ps-section-tabs a{transition:none}}
+
+/* v1.7 loader profile cards */
+.ps-admin .ps-device-style-settings{margin-top:20px;padding:18px;border-radius:15px;background:#fafaff;border:1px solid #e6e7f2}
+.ps-admin .ps-device-style-settings h3{font-size:15px;margin:0 0 6px}
+.ps-admin .ps-device-style-settings>p{margin:0 0 12px}
+.ps-admin .ps-device-style-card{border:1px solid #e7e9f5;background:#fff;border-radius:12px;padding:16px;margin-top:12px}
+.ps-admin .ps-device-style-card .ps-fields-grid{margin-top:14px}
+.ps-admin .ps-device-style-toggle{display:flex;align-items:center;gap:9px;font-size:12px}
+.ps-admin .ps-device-style-toggle input{width:18px;height:18px}
+
+/* v1.9.0: uncluttered readiness checks and guided navigation QA. */
+.ps-readiness{border:1px solid #e1e5f4;border-radius:18px;background:#fff;padding:24px;margin:0 0 24px;box-shadow:0 8px 22px #2632600b}
+.ps-readiness-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:18px}
+.ps-readiness-heading h2{margin:6px 0;font-size:21px;letter-spacing:-.03em;color:#262847}
+.ps-readiness-heading .ps-overview-kicker{color:#6552d7}
+.ps-readiness-heading p,.ps-readiness-footnote{margin:0;color:#68738a;font-size:12px;line-height:1.65}
+.ps-readiness-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ps-readiness-row{display:flex;align-items:center;gap:12px;border:1px solid #e8eaf5;background:#fbfbff;border-radius:13px;padding:14px;min-width:0}
+.ps-ready-icon{display:grid;place-items:center;width:38px;height:38px;flex:none;border-radius:12px;background:#eef0fa;color:#69728d;font-size:19px}
+.ps-ready-icon.is-good{background:#e6f6ec;color:#208656}.ps-ready-icon.is-review{background:#fff2e5;color:#aa6517}
+.ps-readiness-row>div{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}
+.ps-readiness-row strong{color:#293050;font-size:13px}.ps-readiness-row small{font-size:11px;line-height:1.5;color:#6a738a}
+.ps-readiness-row>a{font-size:12px;font-weight:700;color:#6455d4;text-decoration:none;white-space:nowrap}.ps-readiness-row>a:focus-visible{outline:2px solid #6657ed;outline-offset:3px}
+.ps-readiness-footnote{margin-top:14px}
+.ps-quality-audit{border:1px solid #dfe4f6;border-radius:16px;padding:18px;background:linear-gradient(135deg,#f8f7ff,#fff);margin:16px 0 22px}
+.ps-quality-audit-head{display:flex;gap:10px;align-items:center;color:#4c46a5}.ps-quality-audit-head>.dashicons{font-size:25px;width:28px;height:28px}.ps-quality-audit-head>div{display:flex;flex-direction:column;gap:4px}.ps-quality-audit-head strong{font-size:14px}.ps-quality-audit-head small{font-size:11px;color:#6b748c}
+.ps-quality-audit-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0 0}
+.ps-quality-audit-stats>div{background:#fff;border:1px solid #e5e7f4;border-radius:11px;padding:13px;display:flex;flex-direction:column;gap:5px}.ps-quality-audit-stats b{font-size:23px;line-height:1;color:#4f42b6}.ps-quality-audit-stats span{font-size:11px;color:#647087;line-height:1.45}
+.ps-quality-note{margin:13px 0 0;padding:10px 12px;border-radius:9px;font-size:12px;line-height:1.65}.ps-quality-note.is-warning{background:#fff0dc;color:#864d15}.ps-quality-note.is-info{background:#eaf0ff;color:#405282}.ps-quality-note.is-good{background:#e7f7ed;color:#206c49}
+@media(max-width:782px){.ps-readiness{padding:18px}.ps-readiness-grid{grid-template-columns:1fr}.ps-readiness-heading{align-items:flex-start;flex-direction:column}.ps-quality-audit-stats{gap:6px}.ps-quality-audit-stats>div{padding:10px}.ps-quality-audit-stats b{font-size:20px}}
+@media(max-width:480px){.ps-readiness-row{padding:11px}.ps-readiness-row small{font-size:10.5px}.ps-quality-audit-stats span{font-size:10px}}

@@ -1,0 +1,467 @@
+/* Preloader Studio Navigation v1.4.1 — no external fonts or icon CDNs. */
+.psn-nav,.psn-nav *{box-sizing:border-box}
+.psn-nav{--psn-accent:#6657ed;--psn-bg:#fff;--psn-text:#5d6476;--psn-active:#fff;position:fixed;z-index:999998;inset:auto 0 0;display:flex;align-items:center;justify-content:space-around;gap:2px;width:100%;min-height:67px;padding:6px max(9px,env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(9px,env(safe-area-inset-left));background:var(--psn-bg);color:var(--psn-text);box-shadow:0 -5px 30px #17214217;font-family:inherit;line-height:1.2;isolation:isolate}
+.psn-nav .psn-item{position:relative;display:flex;flex:1 1 0;min-width:0;max-width:190px;min-height:49px;align-items:center;justify-content:center;flex-direction:column;gap:3px;padding:6px 2px;text-decoration:none!important;color:inherit;border:0;border-radius:14px;outline-offset:3px;transition:background .18s,color .18s,transform .18s}
+.psn-nav .psn-item:focus-visible{outline:3px solid var(--psn-accent)}
+.psn-nav .psn-item:hover{color:var(--psn-accent)}
+.psn-icon-shell{display:flex;width:28px;height:27px;align-items:center;justify-content:center;flex-shrink:0}
+.psn-icon{display:block;flex-shrink:0;width:23px;height:23px}
+.psn-label{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;font-family:inherit;font-weight:600;font-size:11px;line-height:1.2;letter-spacing:0}
+.psn-nav .psn-item.is-active{color:var(--psn-accent)}
+.psn-nav.psn-no-label .psn-label{position:absolute;clip:rect(0 0 0 0);clip-path:inset(50%);width:1px;height:1px;overflow:hidden;white-space:nowrap}
+.psn-no-label .psn-item{min-height:48px}.psn-no-label .psn-icon{width:26px;height:26px}
+/* 01: Soft Pill */
+.psn-style--soft-pill{border-radius:22px 22px 0 0;border-top:1px solid #80839e1e}
+.psn-style--soft-pill .is-active .psn-icon-shell{background:color-mix(in srgb,var(--psn-accent) 13%,white);border-radius:13px;width:48px;height:32px}
+/* 02: Translucent dock */
+.psn-style--glass-dock{bottom:12px;left:12px;right:12px;width:auto;border-radius:25px;background:color-mix(in srgb,var(--psn-bg) 82%,transparent);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border:1px solid #b2b8cc55;box-shadow:0 14px 35px #10152a26;padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
+.psn-style--glass-dock .is-active{background:color-mix(in srgb,var(--psn-accent) 13%,transparent)}
+/* 03: Neon night */
+.psn-style--neon-night{background:#11152b;color:#b5bad5;box-shadow:0 -8px 34px #02061755}
+.psn-style--neon-night .is-active{color:#fff;text-shadow:0 0 16px var(--psn-accent)}
+.psn-style--neon-night .is-active .psn-icon-shell{color:var(--psn-accent);filter:drop-shadow(0 0 7px var(--psn-accent))}
+/* 04: minimal underline */
+.psn-style--minimal-line{box-shadow:0 -1px 0 #e2e6ef;border-top:0}
+.psn-style--minimal-line .is-active:before{content:"";position:absolute;top:0;left:30%;right:30%;height:3px;border-radius:0 0 8px 8px;background:var(--psn-accent)}
+/* 05: floating island */
+.psn-style--floating-island{bottom:14px;left:4%;width:92%;border-radius:50px;box-shadow:0 12px 30px #1a204b30;padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
+.psn-style--floating-island .is-active{background:var(--psn-accent);color:var(--psn-active);border-radius:40px}
+/* 06: gradient wave */
+.psn-style--gradient-wave{background:linear-gradient(115deg,var(--psn-accent),#9d6df1);color:#fff;border-radius:24px 24px 0 0}
+.psn-style--gradient-wave .is-active{color:white;background:#ffffff31}
+.psn-style--gradient-wave .psn-item:hover{color:white}
+/* 07: cards */
+.psn-style--rounded-cards{gap:7px;padding:9px max(9px,env(safe-area-inset-right)) calc(9px + env(safe-area-inset-bottom)) max(9px,env(safe-area-inset-left));background:#f7f7fd;box-shadow:0 -1px 10px #10192b10}
+.psn-style--rounded-cards .psn-item{background:#fff;box-shadow:0 3px 9px #09182a12;border-radius:15px}
+.psn-style--rounded-cards .is-active{background:var(--psn-accent);color:var(--psn-active)}
+/* 08: bold top tab */
+.psn-style--bold-tab{border-top:2px solid var(--psn-accent);box-shadow:0 -4px 22px #1c214514}
+.psn-style--bold-tab .is-active{color:var(--psn-accent);transform:translateY(-5px)}
+.psn-style--bold-tab .is-active .psn-icon-shell{background:var(--psn-accent);color:var(--psn-active);width:39px;height:37px;border-radius:15px;box-shadow:0 5px 14px #4e47a641}
+/* 09: outlined rail */
+.psn-style--outline-rail{bottom:10px;left:10px;right:10px;width:auto;border:1.5px solid var(--psn-accent);border-radius:18px;box-shadow:0 8px 22px #25346119;padding:7px 8px calc(7px + env(safe-area-inset-bottom))}
+.psn-style--outline-rail .is-active{outline:1.5px solid var(--psn-accent);outline-offset:-2px}
+/* 10: bubble pop */
+.psn-style--bubble-pop{border-radius:24px 24px 0 0;padding-top:15px}
+.psn-style--bubble-pop .is-active .psn-icon-shell{border-radius:50%;width:44px;height:44px;color:var(--psn-active);background:var(--psn-accent);box-shadow:0 6px 13px #14174c2b;transform:translateY(-14px);margin-bottom:-11px}
+/* 11: dark slate frost */
+.psn-style--frosted-slate{bottom:12px;left:10px;width:calc(100% - 20px);border-radius:19px;background:linear-gradient(120deg,#222840,#313957);color:#e1e3f0;border:1px solid #ffffff22;box-shadow:0 13px 32px #0a143349}
+.psn-style--frosted-slate .is-active{background:#ffffff24;color:white}
+.psn-style--frosted-slate .is-active .psn-icon-shell{color:#c8b1ff}
+/* 12: warm sunset */
+.psn-style--sunset-glow{background:linear-gradient(90deg,#fff5f3,#fffaf7);border-top:1px solid #fcded9;color:#84686b}
+.psn-style--sunset-glow .is-active{color:#b6405e}
+.psn-style--sunset-glow .is-active .psn-icon-shell{border-radius:50%;background:linear-gradient(145deg,#ffae84,#eb6b92);color:white;width:39px;height:37px;box-shadow:0 5px 17px #df6b8750}
+@media(min-width:1025px){.psn-nav{display:none!important}}
+@media(max-width:767px){.psn-device--tablet{display:none!important}}
+@media(min-width:768px) and (max-width:1024px){.psn-device--mobile{display:none!important}.psn-nav{max-width:780px;left:50%;transform:translateX(-50%)}.psn-style--floating-island{width:92%}.psn-style--glass-dock,.psn-style--outline-rail,.psn-style--frosted-slate{width:calc(100% - 24px)}.psn-nav .psn-label{font-size:12px}}
+@media(max-width:359px){.psn-nav .psn-item{padding:4px 1px}.psn-nav .psn-label{font-size:10px}.psn-nav{gap:0}}
+@media(prefers-reduced-motion:reduce){.psn-nav .psn-item,.psn-nav .psn-icon-shell{transition:none!important;transform:none!important;animation:none!important}}
+
+/* 1.4.1: fix active-label/icon disappearing behind theme rules and same-color bubbles. */
+body #ps-studio-bottom-nav.psn-nav{display:flex;visibility:visible;opacity:1;pointer-events:auto}
+#ps-studio-bottom-nav.psn-nav .psn-item{font-family:inherit;font-size:inherit;background-clip:padding-box}
+#ps-studio-bottom-nav.psn-nav svg.psn-icon{display:block;stroke:currentColor;fill:none;visibility:visible;opacity:1}
+.psn-nav.psn-style--floating-island .psn-item.is-active,
+.psn-nav.psn-style--rounded-cards .psn-item.is-active{background:var(--psn-accent);color:var(--psn-active)}
+.psn-nav.psn-style--floating-island .psn-item.is-active:hover,
+.psn-nav.psn-style--rounded-cards .psn-item.is-active:hover{color:var(--psn-active)}
+.psn-nav .psn-item.is-active .psn-icon-shell,.psn-nav .psn-item.is-active .psn-label{color:inherit}
+.psn-nav button.psn-item{cursor:pointer;font:inherit;appearance:none;-webkit-appearance:none}
+.psn-nav button.psn-item .psn-label{font-size:11px;font-weight:600}
+.psn-nav .psn-search-panel[hidden]{display:none!important}
+.psn-search-panel{position:absolute;bottom:calc(100% + 12px);left:12px;right:12px;width:auto;padding:15px;border-radius:16px;background:var(--psn-bg);color:var(--psn-text);border:1px solid #d9dbee;box-shadow:0 8px 25px #12142d38;z-index:2}
+.psn-search-panel label{display:block;font-size:13px;font-weight:650;margin-bottom:7px}
+.psn-search-controls{display:flex;gap:8px}
+.psn-search-controls input{flex:1;min-width:0;font:inherit;font-size:16px;border:1px solid #aab0c5;border-radius:9px;padding:9px;background:#fff;color:#1b1b28}
+.psn-search-controls button{border:none;border-radius:9px;padding:8px 12px;background:var(--psn-accent);color:#fff;font-size:13px;font-weight:700;cursor:pointer}
+@media(min-width:1025px){body #ps-studio-bottom-nav.psn-nav{display:none!important}}
+@media(max-width:767px){body #ps-studio-bottom-nav.psn-device--tablet{display:none!important}}
+@media(min-width:768px) and (max-width:1024px){body #ps-studio-bottom-nav.psn-device--mobile{display:none!important}}
+
+/* Style-specific active colors need more specificity than the generic state. */
+.psn-nav button.psn-item{background:transparent}
+.psn-nav.psn-style--neon-night .psn-item.is-active{color:#ffffff}
+.psn-nav.psn-style--neon-night .psn-item.is-active .psn-icon-shell{color:#d3bbff}
+.psn-nav.psn-style--gradient-wave .psn-item.is-active{color:#ffffff;background:#ffffff31}
+.psn-nav.psn-style--frosted-slate .psn-item.is-active{color:#ffffff;background:#ffffff24}
+.psn-nav.psn-style--sunset-glow .psn-item.is-active{color:#b6405e}
+.psn-nav.psn-style--glass-dock .psn-item.is-active{background:color-mix(in srgb,var(--psn-accent) 13%,transparent)}
+.psn-nav.psn-style--rounded-cards .psn-item:not(.is-active){background:#ffffff}
+.psn-nav.psn-style--soft-pill .psn-item.is-active .psn-icon-shell{color:var(--psn-accent)}
+
+/* v1.5.0 Premium polish + fluid custom sizing. All variables are server-clamped. */
+.psn-nav {
+  --psn-menu-height:72px;--psn-menu-width:100%;--psn-icon-size:24px;
+  --psn-label-size:11px;--psn-item-gap:5px;--psn-menu-radius:22px;
+  --psn-item-radius:14px;--psn-bottom-offset:0px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+#ps-studio-bottom-nav.psn-nav,
+#psn-live-nav.psn-nav {
+  min-height:var(--psn-effective-menu-height,var(--psn-menu-height));
+  gap:var(--psn-item-gap);
+  padding-top:8px;
+  padding-bottom:calc(8px + env(safe-area-inset-bottom, 0px));
+  box-shadow:0 -6px 28px #18204c19,0 -1px 0 #cbd0e821;
+}
+#ps-studio-bottom-nav.psn-nav {
+  left:50%;right:auto;
+  width:min(var(--psn-effective-menu-width,var(--psn-menu-width)),100%);
+  transform:translateX(-50%);
+  bottom:var(--psn-effective-bottom-offset,var(--psn-bottom-offset));
+  border-radius:var(--psn-menu-radius) var(--psn-menu-radius) 0 0;
+}
+#ps-studio-bottom-nav.psn-nav .psn-item,
+#psn-live-nav.psn-nav .psn-item {
+  min-height:max(44px,calc(var(--psn-effective-menu-height,var(--psn-menu-height)) - 18px));
+  border-radius:var(--psn-item-radius);
+  gap:3px;
+  transition:background-color .2s ease,color .2s ease,box-shadow .2s ease,transform .2s ease;
+}
+#ps-studio-bottom-nav.psn-nav .psn-icon-shell,
+#psn-live-nav.psn-nav .psn-icon-shell {
+  width:max(32px,calc(var(--psn-effective-icon-size,var(--psn-icon-size)) + 13px));
+  height:max(32px,calc(var(--psn-effective-icon-size,var(--psn-icon-size)) + 9px));
+  transition:background .2s,transform .2s;
+}
+#ps-studio-bottom-nav.psn-nav svg.psn-icon,
+#psn-live-nav.psn-nav svg.psn-icon {
+  width:var(--psn-effective-icon-size,var(--psn-icon-size));
+  height:var(--psn-effective-icon-size,var(--psn-icon-size));
+  max-width:100%;
+  max-height:100%;
+}
+#ps-studio-bottom-nav.psn-nav svg.psn-fa-icon,
+#psn-live-nav.psn-nav svg.psn-fa-icon {
+  stroke:none!important;
+  fill:currentColor!important;
+}
+#ps-studio-bottom-nav.psn-nav .psn-label,
+#psn-live-nav.psn-nav .psn-label {
+  font-size:var(--psn-effective-label-size,var(--psn-label-size));
+  font-weight:650;
+  letter-spacing:-.01em;
+  line-height:1.15;
+}
+#ps-studio-bottom-nav.psn-nav .psn-item.is-active .psn-label,
+#psn-live-nav.psn-nav .psn-item.is-active .psn-label { font-weight:760; }
+#ps-studio-bottom-nav.psn-nav .psn-item:focus-visible { outline:2px solid var(--psn-accent);outline-offset:2px; }
+/* Floating designs keep their rounded corners even when size is adjusted. */
+#ps-studio-bottom-nav.psn-style--floating-island,
+#ps-studio-bottom-nav.psn-style--glass-dock,
+#ps-studio-bottom-nav.psn-style--outline-rail,
+#ps-studio-bottom-nav.psn-style--frosted-slate { border-radius:var(--psn-menu-radius); }
+#ps-studio-bottom-nav.psn-style--floating-island,
+#ps-studio-bottom-nav.psn-style--glass-dock,
+#ps-studio-bottom-nav.psn-style--outline-rail,
+#ps-studio-bottom-nav.psn-style--frosted-slate {
+  bottom:calc(var(--psn-effective-bottom-offset,var(--psn-bottom-offset)) + 12px);
+  width:min(var(--psn-effective-menu-width,var(--psn-menu-width)),calc(100% - 24px));
+  box-shadow:0 16px 40px #10182b2e,0 2px 12px #17214216;
+}
+#ps-studio-bottom-nav.psn-style--floating-island .psn-item.is-active,
+#ps-studio-bottom-nav.psn-style--rounded-cards .psn-item.is-active,
+#psn-live-nav.psn-style--floating-island .psn-item.is-active,
+#psn-live-nav.psn-style--rounded-cards .psn-item.is-active {
+  background:var(--psn-accent);color:var(--psn-active);
+  box-shadow:0 5px 16px #3e32a42f;
+}
+#ps-studio-bottom-nav.psn-style--glass-dock,
+#psn-live-nav.psn-style--glass-dock { -webkit-backdrop-filter:blur(22px) saturate(1.2);backdrop-filter:blur(22px) saturate(1.2); }
+#ps-studio-bottom-nav.psn-style--neon-night .psn-item.is-active,
+#psn-live-nav.psn-style--neon-night .psn-item.is-active {box-shadow:inset 0 0 0 1px #ffffff2d;background:#ffffff16}
+#ps-studio-bottom-nav.psn-style--rounded-cards .psn-item:not(.is-active),
+#psn-live-nav.psn-style--rounded-cards .psn-item:not(.is-active) {background:#fff}
+#ps-studio-bottom-nav.psn-style--gradient-wave .psn-item.is-active,
+#psn-live-nav.psn-style--gradient-wave .psn-item.is-active {box-shadow:inset 0 0 0 1px #ffffff53}
+@media(max-width:400px) {
+  #ps-studio-bottom-nav.psn-nav{padding-left:5px;padding-right:5px;}
+  #ps-studio-bottom-nav.psn-nav .psn-item{padding-left:1px;padding-right:1px;}
+}
+@media(max-width:767px){body #ps-studio-bottom-nav.psn-device--tablet {display:none!important}}
+@media(min-width:768px) and (max-width:1024px){
+ #ps-studio-bottom-nav.psn-nav {max-width:780px;}
+ body #ps-studio-bottom-nav.psn-device--mobile {display:none!important}
+}
+@media(min-width:1025px){body #ps-studio-bottom-nav.psn-nav{display:none!important}}
+/* Theme isolation: explicit colors for links and buttons (UA :link/:visited must not leak in). */
+body #ps-studio-bottom-nav.psn-nav a.psn-item,
+body #ps-studio-bottom-nav.psn-nav button.psn-item,
+#psn-live-nav.psn-nav button.psn-item {
+  color:var(--psn-text)!important;
+  text-decoration:none!important;
+  background-color:transparent;
+  background-image:none;
+  opacity:1;
+}
+body #ps-studio-bottom-nav.psn-nav a.psn-item.is-active,
+body #ps-studio-bottom-nav.psn-nav button.psn-item.is-active,
+#psn-live-nav.psn-nav button.psn-item.is-active {
+  color:var(--psn-accent)!important;
+}
+body #ps-studio-bottom-nav.psn-nav .psn-item .psn-label,
+#psn-live-nav.psn-nav .psn-item .psn-label {color:inherit!important;}
+/* Filled FA artwork must inherit the same foreground as its label. */
+body #ps-studio-bottom-nav.psn-nav .psn-item .psn-fa-icon,
+#psn-live-nav.psn-nav .psn-item .psn-fa-icon {color:inherit;fill:currentColor!important;stroke:none!important;}
+/* The selected state is intentionally different in these themes. */
+body #ps-studio-bottom-nav.psn-style--neon-night .psn-item,
+#psn-live-nav.psn-style--neon-night .psn-item,
+body #ps-studio-bottom-nav.psn-style--frosted-slate .psn-item,
+#psn-live-nav.psn-style--frosted-slate .psn-item {color:#cfd4e9!important;}
+body #ps-studio-bottom-nav.psn-style--neon-night .psn-item.is-active,
+#psn-live-nav.psn-style--neon-night .psn-item.is-active,
+body #ps-studio-bottom-nav.psn-style--frosted-slate .psn-item.is-active,
+#psn-live-nav.psn-style--frosted-slate .psn-item.is-active {color:#ffffff!important;}
+body #ps-studio-bottom-nav.psn-style--gradient-wave .psn-item,
+#psn-live-nav.psn-style--gradient-wave .psn-item,
+body #ps-studio-bottom-nav.psn-style--gradient-wave .psn-item.is-active,
+#psn-live-nav.psn-style--gradient-wave .psn-item.is-active {color:#ffffff!important;}
+body #ps-studio-bottom-nav.psn-style--floating-island .psn-item.is-active,
+#psn-live-nav.psn-style--floating-island .psn-item.is-active,
+body #ps-studio-bottom-nav.psn-style--rounded-cards .psn-item.is-active,
+#psn-live-nav.psn-style--rounded-cards .psn-item.is-active {background:var(--psn-accent)!important;color:var(--psn-active)!important;}
+body #ps-studio-bottom-nav.psn-style--sunset-glow .psn-item.is-active,
+#psn-live-nav.psn-style--sunset-glow .psn-item.is-active {color:#a32958!important;}
+/* Cross-theme fallback: paint icons/labels directly, avoiding link pseudo-class overrides. */
+body #ps-studio-bottom-nav.psn-nav .psn-item svg.psn-icon,
+body #ps-studio-bottom-nav.psn-nav .psn-item .psn-label,
+#psn-live-nav.psn-nav .psn-item svg.psn-icon,
+#psn-live-nav.psn-nav .psn-item .psn-label {color:var(--psn-text)!important;}
+body #ps-studio-bottom-nav.psn-nav .psn-item.is-active svg.psn-icon,
+body #ps-studio-bottom-nav.psn-nav .psn-item.is-active .psn-label,
+#psn-live-nav.psn-nav .psn-item.is-active svg.psn-icon,
+#psn-live-nav.psn-nav .psn-item.is-active .psn-label {color:var(--psn-accent)!important;}
+body #ps-studio-bottom-nav.psn-style--neon-night .psn-item svg.psn-icon,
+body #ps-studio-bottom-nav.psn-style--neon-night .psn-item .psn-label,
+body #ps-studio-bottom-nav.psn-style--frosted-slate .psn-item svg.psn-icon,
+body #ps-studio-bottom-nav.psn-style--frosted-slate .psn-item .psn-label,
+#psn-live-nav.psn-style--neon-night .psn-item svg.psn-icon,
+#psn-live-nav.psn-style--neon-night .psn-item .psn-label,
+#psn-live-nav.psn-style--frosted-slate .psn-item svg.psn-icon,
+#psn-live-nav.psn-style--frosted-slate .psn-item .psn-label {color:#d2d6ec!important;}
+body #ps-studio-bottom-nav.psn-style--neon-night .psn-item.is-active .psn-label,
+body #ps-studio-bottom-nav.psn-style--frosted-slate .psn-item.is-active .psn-label,
+#psn-live-nav.psn-style--neon-night .psn-item.is-active .psn-label,
+#psn-live-nav.psn-style--frosted-slate .psn-item.is-active .psn-label {color:#fff!important;}
+body #ps-studio-bottom-nav.psn-style--gradient-wave .psn-item svg.psn-icon,
+body #ps-studio-bottom-nav.psn-style--gradient-wave .psn-item .psn-label,
+#psn-live-nav.psn-style--gradient-wave .psn-item svg.psn-icon,
+#psn-live-nav.psn-style--gradient-wave .psn-item .psn-label {color:#fff!important;}
+body #ps-studio-bottom-nav.psn-style--floating-island .psn-item.is-active svg.psn-icon,
+body #ps-studio-bottom-nav.psn-style--floating-island .psn-item.is-active .psn-label,
+body #ps-studio-bottom-nav.psn-style--rounded-cards .psn-item.is-active svg.psn-icon,
+body #ps-studio-bottom-nav.psn-style--rounded-cards .psn-item.is-active .psn-label,
+#psn-live-nav.psn-style--floating-island .psn-item.is-active svg.psn-icon,
+#psn-live-nav.psn-style--floating-island .psn-item.is-active .psn-label,
+#psn-live-nav.psn-style--rounded-cards .psn-item.is-active svg.psn-icon,
+#psn-live-nav.psn-style--rounded-cards .psn-item.is-active .psn-label {color:var(--psn-active)!important;}
+body #ps-studio-bottom-nav.psn-style--sunset-glow .psn-item.is-active svg.psn-icon,
+body #ps-studio-bottom-nav.psn-style--sunset-glow .psn-item.is-active .psn-label,
+#psn-live-nav.psn-style--sunset-glow .psn-item.is-active svg.psn-icon,
+#psn-live-nav.psn-style--sunset-glow .psn-item.is-active .psn-label {color:#a32958!important;}
+/* The accent-filled icon shells in these designs should have contrasting glyphs. */
+body #ps-studio-bottom-nav.psn-style--bold-tab .psn-item.is-active svg.psn-icon,
+body #ps-studio-bottom-nav.psn-style--bubble-pop .psn-item.is-active svg.psn-icon,
+#psn-live-nav.psn-style--bold-tab .psn-item.is-active svg.psn-icon,
+#psn-live-nav.psn-style--bubble-pop .psn-item.is-active svg.psn-icon {color:var(--psn-active)!important;}
+body #ps-studio-bottom-nav.psn-style--gradient-wave .psn-item.is-active svg.psn-icon,
+body #ps-studio-bottom-nav.psn-style--gradient-wave .psn-item.is-active .psn-label,
+#psn-live-nav.psn-style--gradient-wave .psn-item.is-active svg.psn-icon,
+#psn-live-nav.psn-style--gradient-wave .psn-item.is-active .psn-label {color:#ffffff!important;}
+
+/* v1.7.0: real responsive overrides, inherited from global sizes until opted in. */
+@media(max-width:767px){
+ #ps-studio-bottom-nav.psn-tuned-mobile{
+  --psn-effective-menu-height:var(--psn-mobile-menu-height);
+  --psn-effective-menu-width:var(--psn-mobile-menu-width);
+  --psn-effective-icon-size:var(--psn-mobile-icon-size);
+  --psn-effective-label-size:var(--psn-mobile-label-size);
+  --psn-effective-bottom-offset:var(--psn-mobile-bottom-offset);
+ }
+}
+@media(min-width:768px) and (max-width:1024px){
+ #ps-studio-bottom-nav.psn-tuned-tablet{
+  --psn-effective-menu-height:var(--psn-tablet-menu-height);
+  --psn-effective-menu-width:var(--psn-tablet-menu-width);
+  --psn-effective-icon-size:var(--psn-tablet-icon-size);
+  --psn-effective-label-size:var(--psn-tablet-label-size);
+  --psn-effective-bottom-offset:var(--psn-tablet-bottom-offset);
+ }
+}
+/* Static device-preview document must opt into the reference viewport deliberately. */
+#psn-live-nav.psn-preview-device--mobile.psn-tuned-mobile{
+ --psn-effective-menu-height:var(--psn-mobile-menu-height);
+ --psn-effective-menu-width:var(--psn-mobile-menu-width);
+ --psn-effective-icon-size:var(--psn-mobile-icon-size);
+ --psn-effective-label-size:var(--psn-mobile-label-size);
+ --psn-effective-bottom-offset:var(--psn-mobile-bottom-offset);
+}
+#psn-live-nav.psn-preview-device--tablet.psn-tuned-tablet{
+ --psn-effective-menu-height:var(--psn-tablet-menu-height);
+ --psn-effective-menu-width:var(--psn-tablet-menu-width);
+ --psn-effective-icon-size:var(--psn-tablet-icon-size);
+ --psn-effective-label-size:var(--psn-tablet-label-size);
+ --psn-effective-bottom-offset:var(--psn-tablet-bottom-offset);
+}
+/* Motion is strictly opt-in by style choice; keyboard navigation remains visible. */
+#ps-studio-bottom-nav.psn-nav .psn-item,#psn-live-nav.psn-nav .psn-item{
+ transition:transform var(--psn-motion-ms,260ms) cubic-bezier(.18,.85,.23,1),box-shadow var(--psn-motion-ms,260ms) ease;
+}
+#ps-studio-bottom-nav.psn-motion--lift .psn-item.is-active,
+#psn-live-nav.psn-motion--lift .psn-item.is-active {transform:translateY(-3px)}
+#ps-studio-bottom-nav.psn-motion--pulse .psn-item.is-active .psn-icon-shell,
+#psn-live-nav.psn-motion--pulse .psn-item.is-active .psn-icon-shell {animation:psn-v17-pulse var(--psn-motion-ms,260ms) ease-in-out 2 alternate}
+#ps-studio-bottom-nav.psn-motion--bounce .psn-item.is-active,
+#psn-live-nav.psn-motion--bounce .psn-item.is-active {animation:psn-v17-bounce var(--psn-motion-ms,260ms) cubic-bezier(.2,.8,.1,1) 1}
+#ps-studio-bottom-nav.psn-motion--glow .psn-item.is-active,
+#psn-live-nav.psn-motion--glow .psn-item.is-active {filter:drop-shadow(0 0 7px var(--psn-accent))}
+#ps-studio-bottom-nav.psn-indicator--dot .psn-item.is-active:after,
+#psn-live-nav.psn-indicator--dot .psn-item.is-active:after {content:'';position:absolute;width:5px;height:5px;border-radius:100%;bottom:2px;left:calc(50% - 2.5px);background:currentColor}
+#ps-studio-bottom-nav.psn-indicator--underline .psn-item.is-active:after,
+#psn-live-nav.psn-indicator--underline .psn-item.is-active:after {content:'';position:absolute;width:22px;height:3px;border-radius:4px;bottom:1px;left:calc(50% - 11px);background:currentColor}
+#ps-studio-bottom-nav.psn-indicator--top-line .psn-item.is-active:before,
+#psn-live-nav.psn-indicator--top-line .psn-item.is-active:before {content:'';position:absolute;width:24px;height:3px;border-radius:4px;top:0;left:calc(50% - 12px);background:currentColor}
+@keyframes psn-v17-pulse{from{transform:scale(.88)}to{transform:scale(1.07)}}
+@keyframes psn-v17-bounce{0%{transform:translateY(0)}55%{transform:translateY(-8px)}100%{transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){
+ #ps-studio-bottom-nav.psn-nav .psn-item,#psn-live-nav.psn-nav .psn-item{animation:none!important;transition:none!important;transform:none!important;filter:none!important}
+ #ps-studio-bottom-nav.psn-nav .psn-icon-shell,#psn-live-nav.psn-nav .psn-icon-shell{animation:none!important}
+}
+
+/* Landscape phone / tablet: touch-device cases that differ from viewport-width-only breakpoints. */
+@media (min-width:768px) and (max-width:1024px) and (max-height:600px) and (orientation:landscape) and (pointer:coarse){
+ body #ps-studio-bottom-nav.psn-device--tablet{display:none!important}
+ body #ps-studio-bottom-nav.psn-device--mobile,body #ps-studio-bottom-nav.psn-device--both{display:flex!important}
+ body #ps-studio-bottom-nav.psn-tuned-tablet{--psn-effective-menu-height:var(--psn-menu-height);}
+ body #ps-studio-bottom-nav.psn-tuned-mobile{--psn-effective-menu-height:var(--psn-mobile-menu-height);}
+ body #ps-studio-bottom-nav.psn-tuned-tablet{--psn-effective-menu-width:var(--psn-menu-width);}
+ body #ps-studio-bottom-nav.psn-tuned-mobile{--psn-effective-menu-width:var(--psn-mobile-menu-width);}
+ body #ps-studio-bottom-nav.psn-tuned-tablet{--psn-effective-icon-size:var(--psn-icon-size);}
+ body #ps-studio-bottom-nav.psn-tuned-mobile{--psn-effective-icon-size:var(--psn-mobile-icon-size);}
+ body #ps-studio-bottom-nav.psn-tuned-tablet{--psn-effective-label-size:var(--psn-label-size);}
+ body #ps-studio-bottom-nav.psn-tuned-mobile{--psn-effective-label-size:var(--psn-mobile-label-size);}
+ body #ps-studio-bottom-nav.psn-tuned-tablet{--psn-effective-bottom-offset:var(--psn-bottom-offset);}
+ body #ps-studio-bottom-nav.psn-tuned-mobile{--psn-effective-bottom-offset:var(--psn-mobile-bottom-offset);}
+}
+@media (min-width:1025px) and (max-width:1366px) and (max-height:1024px) and (orientation:landscape) and (pointer:coarse){
+ body #ps-studio-bottom-nav.psn-device--tablet,body #ps-studio-bottom-nav.psn-device--both{display:flex!important}
+ body #ps-studio-bottom-nav.psn-device--mobile{display:none!important}
+ body #ps-studio-bottom-nav.psn-tuned-tablet{--psn-effective-menu-height:var(--psn-tablet-menu-height);}
+ body #ps-studio-bottom-nav.psn-tuned-tablet{--psn-effective-menu-width:var(--psn-tablet-menu-width);}
+ body #ps-studio-bottom-nav.psn-tuned-tablet{--psn-effective-icon-size:var(--psn-tablet-icon-size);}
+ body #ps-studio-bottom-nav.psn-tuned-tablet{--psn-effective-label-size:var(--psn-tablet-label-size);}
+ body #ps-studio-bottom-nav.psn-tuned-tablet{--psn-effective-bottom-offset:var(--psn-tablet-bottom-offset);}
+}
+
+
+/* v1.8.0 - 12 new shape-driven premium bottom navigation themes.
+   All artwork is CSS/SVG; no extra libraries, images or fonts are loaded. */
+:where(.psn-nav).psn-style--prism-arc{background:linear-gradient(120deg,#121a37,#28305c 75%,#121b35);border-top:1px solid #777cbb70;color:#ccd3ff;box-shadow:0 -8px 34px #0f163844}
+.psn-style--prism-arc .psn-item.is-active .psn-icon-shell{background:linear-gradient(140deg,var(--psn-accent),#678bfa);color:#12152d;clip-path:polygon(20% 0,80% 0,100% 50%,80% 100%,20% 100%,0 50%);width:49px;height:42px;filter:drop-shadow(0 4px 8px #a997ff63)}
+.psn-style--prism-arc .psn-item.is-active{transform:translateY(-5px)}
+:where(.psn-nav).psn-style--citrus-pop{background:linear-gradient(110deg,#fff9d8,#fff2bc);border-top:2px solid #ffdc68;box-shadow:0 -8px 25px #daaa4330;color:#806238;border-radius:32px 32px 0 0}
+.psn-style--citrus-pop .psn-item.is-active .psn-icon-shell{background:radial-gradient(circle at 27% 25%,#ffcf52,#f18020);border-radius:50%;color:white;width:48px;height:45px;box-shadow:inset -4px -4px 0 #c4662150,0 6px 12px #d9913c54}
+.psn-style--citrus-pop .psn-item.is-active{transform:rotate(-3deg)}
+:where(.psn-nav).psn-style--ocean-tide{background:linear-gradient(115deg,#053348,#086b72,#073c59);color:#bdebf1;border-top:1px solid #49d1d880;box-shadow:0 -9px 32px #063f5170}
+.psn-style--ocean-tide:before{content:"";position:absolute;inset:0 0 auto;height:5px;background:repeating-radial-gradient(ellipse at 15px 0,transparent 0 13px,#4cf7da55 13px 18px,transparent 19px 36px);pointer-events:none}
+.psn-style--ocean-tide .psn-item.is-active{background:#b0fbf020;border-radius:24px}
+.psn-style--ocean-tide .psn-item.is-active .psn-icon-shell{background:#8ef4e5;color:#05374a;border-radius:50%;width:41px;height:39px;box-shadow:0 0 0 4px #65f0e225}
+:where(.psn-nav).psn-style--bento-dock{background:#f6f4f1;gap:9px;box-shadow:0 -4px 24px #35303b19;padding:9px max(9px,env(safe-area-inset-right)) calc(9px + env(safe-area-inset-bottom)) max(9px,env(safe-area-inset-left))}
+.psn-style--bento-dock .psn-item{background:#ffffff;border:1px solid #e6e0de!important;border-radius:11px!important;box-shadow:0 3px 9px #635a5814}
+.psn-style--bento-dock .psn-item.is-active{background:var(--psn-accent)!important;border-color:var(--psn-accent)!important;transform:translateY(-4px);box-shadow:0 8px 15px #e05a6c55}
+:where(.psn-nav).psn-style--cyber-circuit{background:linear-gradient(155deg,#09121d,#0c1e25);border-top:2px solid #33f5cb;box-shadow:inset 0 0 0 1px #45e8cd38,0 -10px 28px #001d1f75;color:#b5cbd1}
+.psn-style--cyber-circuit:before,.psn-style--cyber-circuit:after{content:"";position:absolute;height:3px;width:16%;top:-2px;background:#b8ffe9;box-shadow:0 0 12px #2df4be;animation:psn-circuit 4.2s ease-in-out infinite alternate;pointer-events:none}
+.psn-style--cyber-circuit:after{right:8%;animation-delay:-2s;opacity:.65}
+.psn-style--cyber-circuit .psn-item.is-active{background:#4de8ce13;border:1px solid #2af1c185!important;border-radius:4px!important;box-shadow:inset 0 0 14px #2af1b527}
+:where(.psn-nav).psn-style--clay-bubble{background:#fae6db;border-radius:30px 30px 0 0;box-shadow:inset 0 4px 8px #ffffffcc,0 -12px 32px #b26a5a38;color:#9f776b}
+.psn-style--clay-bubble .psn-item{border-radius:26px!important}
+.psn-style--clay-bubble .psn-item.is-active .psn-icon-shell{background:#f5d4c4;box-shadow:inset 5px 5px 9px #c989773f,inset -5px -5px 9px #fff8f0,0 3px 9px #8a483321;border-radius:22px;width:52px;height:44px}
+:where(.psn-nav).psn-style--sakura-petal{background:linear-gradient(100deg,#ffe8f2,#fff5f9,#fce0ed);color:#8f5973;border-top:1px solid #e6afc5;border-radius:36px 36px 0 0}
+.psn-style--sakura-petal .psn-item.is-active .psn-icon-shell{background:linear-gradient(145deg,#f194bc,#cb5291);color:white;border-radius:68% 33% 67% 33%;width:45px;height:42px;box-shadow:0 7px 12px #e87cb65c;transform:rotate(-15deg)}
+.psn-style--sakura-petal .psn-item.is-active svg{transform:rotate(15deg)}
+:where(.psn-nav).psn-style--emerald-capsule{background:linear-gradient(115deg,#0d4b40,#09382e);color:#c5e8df;border:1px solid #7eeac34d;border-radius:60px;box-shadow:0 16px 34px #093d3160}
+.psn-style--emerald-capsule .psn-item.is-active{background:#a9f7a6;color:#144c36;border-radius:35px!important;box-shadow:0 0 0 3px #99ed9d28}
+:where(.psn-nav).psn-style--retro-pixel{background:#fff7d6;border:3px solid #343143;border-radius:0!important;box-shadow:6px -6px 0 #f6bb72;gap:6px;color:#494052}
+.psn-style--retro-pixel .psn-item{border-radius:0!important;transition:none!important}
+.psn-style--retro-pixel .psn-item.is-active{background:#363244;border-radius:0!important;box-shadow:4px 4px 0 #ffad6f;transform:translate(-2px,-3px)}
+.psn-style--retro-pixel .psn-label{font-weight:800!important;letter-spacing:.02em!important}
+:where(.psn-nav).psn-style--royal-velvet{background:linear-gradient(110deg,#1a112b,#332143,#1b112d);color:#e3d5f3;border-top:2px solid #d5aa55;box-shadow:0 -10px 35px #110c2060}
+.psn-style--royal-velvet .psn-item.is-active:before{content:"";position:absolute;bottom:1px;left:30%;width:40%;height:3px;border-radius:99px;background:#e9c878;box-shadow:0 0 12px #ebc575}
+.psn-style--royal-velvet .psn-item.is-active .psn-icon-shell{color:#e7c06c;filter:drop-shadow(0 0 8px #ebc5758c)}
+:where(.psn-nav).psn-style--orbit-halo{background:linear-gradient(125deg,#131c43,#233567);color:#c4d0fa;border-top:1px solid #859dfc47;box-shadow:0 -12px 34px #1e32765c}
+.psn-style--orbit-halo .psn-item.is-active .psn-icon-shell{position:relative;background:#253967;border:1px solid #b1caffb0;border-radius:50%;height:44px;width:44px;box-shadow:0 0 0 5px #98b8ff22}
+.psn-style--orbit-halo .psn-item.is-active .psn-icon-shell:before{content:"";position:absolute;inset:-7px;border:1px dashed #b2ccff99;border-radius:50%;animation:psn-orbit 8s linear infinite;pointer-events:none}
+:where(.psn-nav).psn-style--mono-editorial{background:#fff;border-top:2px solid #161616;box-shadow:0 -3px 18px #08080810;color:#444;border-radius:0!important}
+.psn-style--mono-editorial .psn-item.is-active{background:#191919;border-radius:3px!important;color:white}
+.psn-style--mono-editorial .psn-label{font-weight:800!important;letter-spacing:-.02em!important;text-transform:uppercase}
+@keyframes psn-circuit{from{transform:translateX(0)}to{transform:translateX(160px)}}
+@keyframes psn-orbit{to{transform:rotate(360deg)}}
+/* Theme CSS should never recolor the brand palette of these designs. */
+body :is(#ps-studio-bottom-nav,#psn-live-nav).psn-nav:is(.psn-style--prism-arc,.psn-style--ocean-tide,.psn-style--cyber-circuit,.psn-style--emerald-capsule,.psn-style--royal-velvet,.psn-style--orbit-halo) .psn-item:not(.is-active) :is(.psn-label,.psn-icon){color:#c2d4e9!important}
+body :is(#ps-studio-bottom-nav,#psn-live-nav).psn-nav:is(.psn-style--prism-arc,.psn-style--ocean-tide,.psn-style--cyber-circuit,.psn-style--emerald-capsule,.psn-style--royal-velvet,.psn-style--orbit-halo) .psn-item.is-active :is(.psn-label,.psn-icon){color:var(--psn-accent)!important}
+body :is(#ps-studio-bottom-nav,#psn-live-nav).psn-nav:is(.psn-style--citrus-pop,.psn-style--sakura-petal,.psn-style--clay-bubble,.psn-style--bento-dock,.psn-style--retro-pixel,.psn-style--mono-editorial) .psn-item:not(.is-active) :is(.psn-label,.psn-icon){color:var(--psn-text)!important}
+body :is(#ps-studio-bottom-nav,#psn-live-nav).psn-nav:is(.psn-style--citrus-pop,.psn-style--sakura-petal,.psn-style--clay-bubble,.psn-style--bento-dock,.psn-style--retro-pixel,.psn-style--mono-editorial) .psn-item.is-active :is(.psn-label,.psn-icon){color:var(--psn-accent)!important}
+/* Filled active tiles: icon and label must contrast on bright/dark surfaces. */
+body :is(#ps-studio-bottom-nav,#psn-live-nav).psn-nav:is(.psn-style--bento-dock,.psn-style--retro-pixel,.psn-style--mono-editorial,.psn-style--emerald-capsule) .psn-item.is-active :is(.psn-icon,.psn-label){color:var(--psn-active)!important}
+body :is(#ps-studio-bottom-nav,#psn-live-nav).psn-nav:is(.psn-style--prism-arc,.psn-style--citrus-pop,.psn-style--ocean-tide,.psn-style--sakura-petal) .psn-item.is-active .psn-icon-shell .psn-icon{color:var(--psn-active)!important}
+/* Move the entire floating emerald dock above device gesture area. */
+#ps-studio-bottom-nav.psn-style--emerald-capsule,
+#psn-live-nav.psn-style--emerald-capsule{bottom:calc(var(--psn-effective-bottom-offset,var(--psn-bottom-offset)) + 14px);width:min(var(--psn-effective-menu-width,var(--psn-menu-width)),calc(100% - 28px));border-radius:var(--psn-menu-radius);left:50%;right:auto;transform:translateX(-50%)}
+@media(max-width:359px){.psn-style--bento-dock{gap:3px!important}.psn-style--retro-pixel{gap:2px!important}.psn-style--clay-bubble .psn-item.is-active .psn-icon-shell{width:40px;height:40px}}
+@media(prefers-reduced-motion:reduce){.psn-style--cyber-circuit:before,.psn-style--cyber-circuit:after,.psn-style--orbit-halo .psn-item.is-active .psn-icon-shell:before{animation:none!important}}
+/* v1.8.0: enforce filled state contrast against theme button resets. */
+body :is(#ps-studio-bottom-nav,#psn-live-nav).psn-nav.psn-style--emerald-capsule .psn-item.is-active {
+  background:#b2f07c!important;
+  border-radius:35px!important;
+  color:#113b30!important;
+}
+body :is(#ps-studio-bottom-nav,#psn-live-nav).psn-nav.psn-style--retro-pixel .psn-item.is-active {
+  background:#363244!important;
+  border-radius:0!important;
+  box-shadow:4px 4px 0 #ffad6f!important;
+}
+body :is(#ps-studio-bottom-nav,#psn-live-nav).psn-nav.psn-style--mono-editorial .psn-item.is-active {
+  background:#191919!important;
+  border-radius:3px!important;
+}
+body :is(#ps-studio-bottom-nav,#psn-live-nav).psn-nav .psn-icon-shell{max-width:100%}
+@media(max-width:360px){
+ body :is(#ps-studio-bottom-nav,#psn-live-nav).psn-nav .psn-icon-shell{min-width:0;width:min(100%,var(--psn-effective-icon-size,var(--psn-icon-size)) + 5px)}
+}
+/* Distinctive but lightweight motion signatures. One small active element per bar. */
+.psn-style--citrus-pop .psn-item.is-active .psn-icon-shell svg{animation:psn-citrus-wiggle 3.8s ease-in-out infinite}
+.psn-style--ocean-tide .psn-item.is-active .psn-icon-shell{position:relative}
+.psn-style--ocean-tide .psn-item.is-active .psn-icon-shell:after{content:"";position:absolute;inset:-3px;border:1px solid #91f7e7;border-radius:50%;animation:psn-ocean-ripple 3.1s ease-out infinite;pointer-events:none}
+.psn-style--sakura-petal .psn-item.is-active .psn-icon-shell{animation:psn-petal-sway 4.8s ease-in-out infinite alternate}
+.psn-style--clay-bubble .psn-item.is-active .psn-icon-shell{animation:psn-clay-breathe 3.5s ease-in-out infinite}
+.psn-style--royal-velvet .psn-item.is-active:before{animation:psn-royal-shine 3.2s ease-in-out infinite}
+@keyframes psn-citrus-wiggle{0%,78%,100%{transform:rotate(0deg)}85%{transform:rotate(-12deg)}92%{transform:rotate(11deg)}}
+@keyframes psn-ocean-ripple{0%{opacity:.75;transform:scale(.85)}65%,100%{opacity:0;transform:scale(1.32)}}
+@keyframes psn-petal-sway{from{transform:rotate(-16deg) translateY(0)}to{transform:rotate(-6deg) translateY(-3px)}}
+@keyframes psn-clay-breathe{0%,100%{filter:brightness(1)}50%{filter:brightness(1.06)}}
+@keyframes psn-royal-shine{0%,100%{opacity:.45;transform:scaleX(.8)}50%{opacity:1;transform:scaleX(1.15)}}
+@media(prefers-reduced-motion:reduce){
+ .psn-style--citrus-pop .psn-item.is-active .psn-icon-shell svg,
+ .psn-style--ocean-tide .psn-item.is-active .psn-icon-shell:after,
+ .psn-style--sakura-petal .psn-item.is-active .psn-icon-shell,
+ .psn-style--clay-bubble .psn-item.is-active .psn-icon-shell,
+ .psn-style--royal-velvet .psn-item.is-active:before{animation:none!important}
+}
+
+/* v2.3.0 scroll-aware dock. CSS individual translate preserves the theme's centering transform. */
+#ps-studio-bottom-nav.psn-nav{translate:0 0;transition:translate .28s cubic-bezier(.2,.75,.3,1),opacity .22s ease;will-change:translate}
+body #ps-studio-bottom-nav.psn-nav.psn-scroll-hidden{translate:0 calc(115% + env(safe-area-inset-bottom,0px));opacity:0!important;pointer-events:none!important}
+#ps-studio-bottom-nav.psn-nav:focus-within{translate:0 0!important;opacity:1!important;pointer-events:auto!important}
+@media(prefers-reduced-motion:reduce){#ps-studio-bottom-nav.psn-nav{transition:none!important;will-change:auto}}
+
+/* v2.3.1: stable, theme-scoped toolbar replacement.
+   This selector remains in force while our dock animates off-screen.
+   Only applies to WoodMart's known bottom toolbar when explicitly allowed,
+   and is removed by disabling our menu or its WoodMart switch. */
+@media (max-width:1024px) {
+  body.psn-replace-woodmart .wd-toolbar,
+  body.psn-replace-woodmart .woodmart-toolbar {display:none!important;visibility:hidden!important;pointer-events:none!important;}
+}

@@ -1,0 +1,12 @@
+# Font Awesome Free icons — attribution
+
+Preloader Studio includes locally stored SVG **icon artwork only**, generated from Font Awesome **5 Free Solid** icon outlines. No Font Awesome font files are distributed with this plugin.
+
+Font Awesome Free icons © Fonticons, Inc. (https://fontawesome.com/).
+**Icons License: Creative Commons Attribution 4.0 International (CC BY 4.0)**
+https://creativecommons.org/licenses/by/4.0/
+Source: https://github.com/FortAwesome/Font-Awesome
+
+Changes: Free Solid vector outlines have been converted into normalized, 512×512, SVG path geometry and organized into searchable categories for the plugin. This attribution must be preserved when redistributing.
+
+Other Preloader Studio PHP/CSS/JS code: GPLv2 or later.

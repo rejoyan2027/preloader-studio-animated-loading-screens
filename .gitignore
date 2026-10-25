@@ -1,0 +1,9 @@
+# Files generated during local development
+.DS_Store
+Thumbs.db
+node_modules/
+vendor/
+*.log
+*.zip
+.env
+.env.*
